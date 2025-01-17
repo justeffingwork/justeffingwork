@@ -1,0 +1,439 @@
+<!doctype html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Noticias</title>
+
+<link rel="icon" type="image/png" href="imagenes/favicon-32x32.png" sizes="32x32"/>
+<link rel="icon" type="image/png" href="imagenes/favicon-16x16.png" sizes="16x16"/>
+
+<style>
+
+body{
+	margin: 0;
+	padding: 0;
+	background: url("imagenes/fondo-noticias.png") no-repeat;
+	background-size: cover;
+	}
+
+#contenedor {
+    width: 1280px;
+    height: 2460px;
+    margin: auto;
+	}
+
+#cabecera {
+    width: 1080px;
+    height: 50px;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    float: left;
+    background-color: #101010;
+	}
+
+#logo {
+    width: 71.857px;
+    height: 50px;
+    float: left;
+	}
+
+#boton-inicio {
+    width: 41.781px;
+    height: 50px;
+	margin-left: 75px;
+    float: left;
+	}
+
+#boton-portafolio {
+    width: 74.664px;
+    height: 50px;
+    margin-left: 75px;
+    float: left;
+	}
+
+#boton-noticias {
+    width: 62.242px;
+    height: 50px;
+    margin-left: 75px;
+    float: left;
+	}
+
+#boton-contacto {
+    width: 69.328px;
+    height: 50px;
+    margin-left: 75px;
+    float: left;
+	}
+
+#boton-canal-youtube {
+    width: 200.909px;
+    height: 50px;
+    float: right;
+	}
+	
+#cuerpo {
+	width: 1280px;
+	height: 2075px;
+	float: left;
+	clear: left;
+	background-image: url("imagenes/cuerpo.png")
+	}	
+
+#contenido-cuerpo {
+	width: 1080px;
+	height: 1975px;
+	margin-top: 50px;
+	margin-left: 100px;
+	float: left;
+	}
+
+#titulo-noticia {
+    width: 1080px;
+    height: 46px;
+	margin-top 50px;
+    float: left;
+    color: #5397E0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: left;
+	}
+
+#autores {
+    width: 1044px;
+    height: 16px;
+    margin-top: 30px;
+	margin-left: 36px;
+    float: left;
+    clear: left;
+    color: #A0A0A0;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    text-align: left;
+	}
+
+#cubrimiento-audiovisual {
+	width: 1080px;
+	height: 607.50px;
+	margin-top: 35px;
+	float: left;
+	clear: left;
+	}
+
+#cuerpo-noticia {
+    width: 1080px;
+    height: 702px;
+    margin-top: 50px;
+    float: left;
+    clear: left;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    text-align: justify;
+	}
+	
+#mas-informacion {
+	width: 1044px;
+	height: 16px;
+	margin-top: 50px;
+	margin-left: 36px;
+	float: left;
+	clear: left;
+	color: #A0A0A0;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    text-align: left;
+	}
+
+#carrusel {
+	width: 1080px;
+	height: 360px;
+	margin-top: 50px;
+	float: left;
+	clear: left;
+	}	
+
+/*Acá empezar a poner el contenido de las Noticias.*/
+
+#pie-de-pagina {
+    width: 1280px;
+    height: 235px;
+    float: left;
+    clear: left;
+    background-color: #212121;
+	}
+
+#contenido-pie-de-pagina {
+	width: 1080px;
+    height: 135px;
+	margin-top: 50px;
+	margin-left: 100px;
+    float: left;
+    background-color: #212121;
+	}
+
+#logo-pie-de-pagina {
+    width: 360px;
+    height: 135px;
+    float: left;
+	}
+
+#titulo-categorias {
+    width: 360px;
+    height:15px;
+    float: left;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+	font-size: 16px;
+	text-align: left;
+	}
+
+#titulo-redes-sociales {
+    width: 360px;
+    height: 15px;
+    float: left;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+	font-size: 16px;
+	text-align: left;
+	}
+
+#categorias {
+    width: 360px;
+    height: 100px;
+    margin-top: 16px;
+    float: left;
+	color: #A0A0A0;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 20pt;
+	}
+
+#redes-sociales {
+	width: 360px;
+    height: 100px;
+    margin-top: 16px;
+    float: left;
+	}
+
+#logo-youtube {
+	width: 38px;
+    height: 38px;
+    margin-top: 32.500px;
+    float: left;
+	}
+
+#logo-instagram {
+	width: 38px;
+    height: 38px;
+    margin-top: 32.500px;
+	margin-left: 13px;
+    float: left;
+	}
+	
+#logo-twitter {
+	width: 38px;
+    height: 38px;
+    margin-top: 32.500px;
+	margin-left: 13px;
+    float: left;
+	}
+
+a:link {
+	color: inherit;
+	background-color: transparent;
+  	text-decoration: none;
+	}
+
+a:visited {
+  	color: inherit;
+  	background-color: transparent;
+  	text-decoration: none;
+	}
+
+a:hover {
+  	color: #5397e0;
+  	background-color: transparent;
+  	text-decoration: none;
+	}
+
+a:active {
+  	color: inherit;
+  	background-color: transparent;
+  	text-decoration: none;
+	}
+
+#boton-ir-arriba {
+    width: 50px;
+    height: 50px;
+    display: none;
+    position: fixed;
+    right: 311.5px;
+    bottom: 50px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-image: url("imagenes/boton-ir-arriba.png"), linear-gradient(0deg,rgba(83,151,224,1.00) 0%,rgba(23,103,191,1.00) 100%);
+	}
+
+#boton-ir-arriba:hover {
+    background-image: url("imagenes/boton-ir-arriba.png"), linear-gradient(0deg,rgba(83,151,224,1.00) 0%,rgba(23,103,191,1.00) 100%);
+	}
+	
+</style>
+
+</head>
+
+<body>
+
+<div id="contenedor">
+
+	<div id="cabecera">
+	
+		<div id="logo">
+		<a href="index.html"><img src="imagenes/logo.png" width="71.857" height="50" alt=""/></a>
+		</div>
+		
+		<div id="boton-inicio">
+		<a href="index.html"><img src="imagenes/boton-inicio.png" width="41.781" height="50" alt=""/></a>
+		</div>
+		
+		<div id="boton-portafolio">
+		<a href="portafolio.html"><img src="imagenes/boton-portafolio.png" width="74.664" height="50" alt=""/></a>
+		</div>
+		
+		<div id="boton-noticias">
+		<a href="noticias.html"><img src="imagenes/en-boton-noticias.png" width="62.242" height="50" alt=""/></a>
+		</div>
+		
+		<div id="boton-contacto">
+		<a href="contacto.html"><img src="imagenes/boton-contacto.png" width="69.328" height="50" alt=""/></a>
+		</div>
+		
+		<div id="boton-canal-youtube">
+		<a href="https://www.youtube.com/channel/UC4zIth1NQK77l_fiLG0JUHQ"><img src="imagenes/boton-canal-youtube.png" width="200.909" height="50" alt=""/></a>
+		</div>
+	
+	</div>
+	
+	<div id="cuerpo">
+	
+		<div id="contenido-cuerpo">
+		
+			<div id="titulo-noticia">
+			Cali, donde se jugará profesionalmente.
+			</div>
+			
+			<div id="autores">
+			<b>Elaborado por:</b> <a href="https://www.instagram.com/andres061410/">@andres061410</a>, <a href="https://www.instagram.com/jupamongo/">@jupamongo</a> y <a href="https://www.instagram.com/tatianacampo_/">@tatianacampo_</a>
+			</div>
+			
+			<div id="cubrimiento-audiovisual">
+			<iframe width="1080" height="607.5" src="https://www.youtube.com/embed/gvXUP-f7HD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			
+			<div id="cuerpo-noticia">
+			Los primeros Juegos Panamericanos Junior 2021 constan de varias sedes como Cali (siendo la principal), Palmira, Jumbo, Jamundí, Buga, El Darién y el Lago Calima con distintas disciplinas en cada una de esas sedes donde llegarán más de 3000 personas entre participantes, entrenadores y colaboradores de las diferentes delegaciones.
+			<br><br>
+			Estas sedes fueron adecuadas con la ayuda de la Gobernación del Valle e Indervalle con una inversión más de Diecisiete mil millones de pesos; el Arquitecto Juan Carlos Rueda nos cuenta como ha sido toda esta misión que le asignaron.
+			<br><br>
+			Primero Rueda nos cuenta que el Coliseo Evangelista Mora tuvo una inversión de mil trecientos millones de pesos entre iluminación, techo y adecuación correspondiente en la cancha para cumplir con los requisitos establecidos por los juegos. También agrega que, la inversión más grande que se hizo fue la correspondiente a la piscina de clavados Hernando Botero Obyrne, con una reconstrucción total para establecer los requisitos puestos por la Federación Internacional de Natación, siendo los clavados de 1mts, 3mts, 5mts, 7,5mts y 10mts su enfoque, buscando así la acreditación por parte de la Federación.
+			<br><br>
+			Para la atracción principal el Estadio Pascual Guerrero con sus nuevas luminarias acreditadas por la CONMEBOL para la realización de la Copa América, se puso a actuar con su show de luces que todos los vallecaucanos aspiramos a ver el día 25 de noviembre que se realizara la apertura de los primeros Juegos Panamericanos Junior 2021 y Rueda comenta que, hay una gran sorpresa para los jóvenes con una presentación de un gran artista.
+			<br><br>
+			Así que están todos invitados a estos juegos para apoyar la reactivación económica y deportiva del Valle del Cauca, esperando un gran recibimiento de parte del público siendo el primer evento multideportivo que contará con el aforo del 100% de público con su respectivo carnet de vacunación.
+			</div>
+			
+			<div id="mas-informacion">
+			Para más información, visite: <a href="https://www.calivalle2021.com/">https://www.calivalle2021.com/</a>
+			</div>
+			
+			<div id="carrusel">
+			<img src="imagenes/carrusel.png" width="1080" height="360" alt=""/>			
+			</div>
+		
+		</div>
+	
+	</div>
+		
+	<div id="pie-de-pagina">
+	
+		<div id="contenido-pie-de-pagina">
+		
+			<div id="logo-pie-de-pagina">
+			<img src="imagenes/logo-pie-de-pagina.png" width="360" height="135" alt=""/>
+			</div>
+			
+			<div id="titulo-categorias">
+			CATEGORÍAS
+			</div>
+			
+			<div id="titulo-redes-sociales">
+			REDES SOCIALES
+			</div>
+			
+			<div id="categorias">
+			<a href="index.html">Inicio</a><br>
+			<a href="portafolio.html">Portafolio</a><br>
+			<a href="noticias.html">Noticias</a><br>
+			<a href="contacto.html">Contacto</a>
+			</div>
+			
+			<div id="redes-sociales">
+			
+				<div id="logo-youtube">
+				<a href="https://www.youtube.com/channel/UC4zIth1NQK77l_fiLG0JUHQ"><img src="imagenes/logo-youtube.png" width="38px" height="38px" alt=""/></a>
+				</div>
+				
+				<div id="logo-instagram">
+				<a href="https://www.instagram.com/jupamongo/"><img src="imagenes/logo-instagram.png" width="38px" height="38px" alt=""/></a>
+				</div>
+				
+				<div id="logo-twitter">
+				<a href="https://twitter.com/jupamongo"><img src="imagenes/logo-twitter.png" width="38px" height="38px" alt=""/></a>
+				</div>
+				
+			</div>
+			
+		</div>
+	
+	</div>
+
+<button onclick="topFunction()" id="boton-ir-arriba" title="Ir arriba"></button>
+
+<script>
+
+	var mybutton = document.getElementById("boton-ir-arriba");
+
+	window.onscroll = function() {scrollFunction()}
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		mybutton.style.display = "block";
+		}
+		else {
+		mybutton.style.display = "none";
+		}
+		}
+
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+		}
+
+</script>
+
+</div>
+
+</body>
+
+</html>
