@@ -86,3 +86,22 @@ tarjetas.forEach(tarjeta => {
         });
     }
 });
+
+let ultimoScroll = 0;
+const boton = document.querySelector('.botonEsEn');
+const alturaBoton = 50;
+
+window.addEventListener('scroll', () => {
+    const scrollActual = window.pageYOffset;
+
+    // Detecta dirección del scroll (abajo vs arriba)
+    if (scrollActual > ultimoScroll && scrollActual > alturaBoton) {
+        // Scroll hacia ABAJO -> Esconde
+        boton.classList.add('escondido');
+    } else {
+        // Scroll hacia ARRIBA -> Muestra
+        boton.classList.remove('escondido');
+    }
+    
+    ultimoScroll = scrollActual;
+});
