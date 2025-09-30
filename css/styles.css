@@ -10,6 +10,20 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+.botonEsEn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.botonEsEn.escondido {
+    transform: translateY(-100px);
+    transition: transform 0.3s ease; /* Cambiar o borrar si no quiere la animación */
+}
+
 html, body {
     overflow-x: hidden;
     width: 100%;
@@ -342,6 +356,21 @@ section {
     background-color: transparent;
 }
 
+.tarjetaExperiencia {
+    padding-bottom: 12vh;
+    background-color: transparent;
+}
+
+.tarjetaExperienciaVacia {
+    padding-bottom: 4vh;
+    background-color: transparent;
+}
+
+.tarjetaExperienciaVaciaPrimera {
+    padding-top: 9vh;
+    background-color: transparent;
+}
+
 .tarjetaExperiencia h6{
     font-size: 2.5vh;
     padding-bottom: 0.5vh;
@@ -366,12 +395,33 @@ section {
     width: auto;
     height: 40vh;
     left: 50%;
-    top: 50%;
+    top: 50.75%;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
 
+.desaparecer {
+    display: none;
+}
+
 @media (orientation: portrait) {
+
+    /* weas nuevas de la actualización */
+
+    .aparecer {
+        display: none;
+    }
+    .desaparecer {
+        display: flex;
+    }
+    .tarjetaExperiencia {
+        padding-bottom: 0.5vh;
+    }
+
+    .tarjetaExperienciaVacia {
+        padding-bottom: 0vh;
+        display: none;
+    }
 
     .tituloExperiencia {
         padding-top: 0vh;
@@ -400,7 +450,7 @@ section {
     }
 
     .contenidoExperienciaI {
-        padding-top: 16vh;
+        padding-top: 14vh;
     }
     
     .tarjetaExperiencia {
@@ -459,7 +509,7 @@ section {
 }
 
 .contenedorTarjeta {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -471,13 +521,25 @@ section {
     z-index: 2;
 }
 
+.contenedorTarjeta:hover .playTarjeta {
+    opacity: 1;
+}
+
+.linkImagen {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 21vh;
+    text-decoration: none;
+}
+  
 .imgTarjeta {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-top-left-radius: 1vh;
     border-top-right-radius: 1vh;
-    background-color: transparent;
 }
 
 .playTarjeta {
@@ -488,9 +550,10 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: 50;
     background-color: transparent;
     opacity: 0;
+    pointer-events: none;
 }
 
 .transparent {
@@ -501,7 +564,7 @@ section {
 .playTarjeta svg {
     width: 10vh;
     height: 10vh;
-    fill: white;
+    fill: #5293cd;
     background-color: transparent;
 }
 
@@ -594,7 +657,7 @@ section {
     align-items: center;
     opacity: 1;
     animation: glow 1s ease-in-out infinite; /* Luz de navidad */
-    z-index: 9;
+    z-index: 20;
     cursor: pointer;
 }
 
