@@ -16,7 +16,7 @@
     <!-- en - es -->
 
     <div class="botonEsEn">
-        <a href="./en.html"><button class="botonSecundario">EN</button></a>
+        <a href="./en/en.html"><button class="botonPrimario">EN</button></a>
     </div>
     <!-- Barra de navegación -->
     <nav class="navbar">
@@ -82,18 +82,45 @@
         </section>
 
         <section id="experiencia">
-            <img class="barraTresPuntos" src="../assets/barra_tres_puntos.webp" alt=">">
+            <img class="barraTresPuntos" src="../assets/barra_cuatro_puntos.webp" alt=">">
             <header class="tituloExperiencia">
                 <h2>Experiencia</h2>
             </header>
-            <div class="cuerpoExperiencia">
+            <div class="cuerpoExperiencia aparecer">
                 <article class="contenidoExperienciaI">
                     <div class="tarjetaExperiencia">
                         <h6>Productor Audiovisual</h6>
                         <p>Independiente</p>
                         <p>2022 - Actualidad</p>
                     </div>
+                    <div class="tarjetaExperiencia tarjetaExperienciaVacia">
+                        <h6></h6>
+                        <p></p>
+                        <p></p>
+                    </div>
                     <div class="tarjetaExperiencia">
+                        <h6>Editor de Video</h6>
+                        <p>Ossa Films</p>
+                        <p>2023 - 2024</p>
+                    </div>
+                    <div class="tarjetaExperiencia tarjetaExperienciaVacia">
+                        <h6></h6>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </article>
+                <article class="contenidoExperienciaD">
+                    <div class="tarjetaExperiencia tarjetaExperienciaVacia tarjetaExperienciaVaciaPrimera">
+                        <h6></h6>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="tarjetaExperiencia">
+                        <h6>Especialista Creativo</h6>
+                        <p>Black Bulb Media</p>
+                        <p>Feb. 2025 - May. 2025</p>
+                    </div>
+                    <div class="tarjetaExperiencia tarjetaExperienciaVacia">
                         <h6></h6>
                         <p></p>
                         <p></p>
@@ -104,8 +131,32 @@
                         <p>2022 - 2024</p>
                     </div>
                 </article>
-                <article class="contenidoExperienciaD">
+            </div>
+            <div class="cuerpoExperiencia desaparecer">
+                <article class="contenidoExperienciaI">
                     <div class="tarjetaExperiencia">
+                        <h6>Productor Audiovisual</h6>
+                        <p>Independiente</p>
+                        <p>2022 - Actualidad</p>
+                    </div>
+                    <div class="tarjetaExperiencia tarjetaExperienciaVacia">
+                        <h6></h6>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="tarjetaExperiencia">
+                        <h6>Especialista Creativo</h6>
+                        <p>Black Bulb Media</p>
+                        <p>Feb. 2025 - May. 2025</p>
+                    </div>
+                    <div class="tarjetaExperiencia tarjetaExperienciaVacia">
+                        <h6></h6>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </article>
+                <article class="contenidoExperienciaD">
+                    <div class="tarjetaExperiencia tarjetaExperienciaVacia tarjetaExperienciaVaciaPrimera">
                         <h6></h6>
                         <p></p>
                         <p></p>
@@ -115,10 +166,15 @@
                         <p>Ossa Films</p>
                         <p>2023 - 2024</p>
                     </div>
-                    <div class="tarjetaExperiencia">
+                    <div class="tarjetaExperiencia tarjetaExperienciaVacia">
                         <h6></h6>
                         <p></p>
                         <p></p>
+                    </div>
+                    <div class="tarjetaExperiencia">
+                        <h6>Videógrafo</h6>
+                        <p>Universidad Santiago de Cali</p>
+                        <p>2022 - 2024</p>
                     </div>
                 </article>
             </div>
@@ -129,16 +185,22 @@
                 <h1>Portafolio</h1>
             </header>
             <div class="cuerpoPortafolio">
+
+                <!-- videoju[z]gar -->
                 <article class="tarjetaPortafolio" data-premio="true">
                     <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://youtube.com/playlist?list=PLuuBZMiy3KpNzzliPVNosWE4Jcig5mgG4&si=GKXWTA1JiTNbccMy" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                        </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/videojuzgar.png" alt="">
+                        <a class="linkImagen" href="https://youtube.com/playlist?list=PLuuBZMiy3KpNzzliPVNosWE4Jcig5mgG4" target="_blank" rel="noopener noreferrer" aria-label="Abrir video en nueva pestaña">
+                            <img class="imgTarjeta" src="../assets/imgPortafolio/videojuzgar.png" alt="Mini-serie videoju[z]gar">
+                            <span class="playTarjeta" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M7 6v12l10-6z"></path>
+                                </svg>
+                            </span>
+                        </a>
                         <div class="notificacion">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
+                            </svg>
                         </div>
                         <div class="contenidoTarjeta">
                             <h6>Mini-serie de TV</h6>
@@ -150,179 +212,215 @@
                                 <li>Musicalización.</li>
                             </ul>
                         </div>
-                            <div class="contenidoOculto" style="display: none;">
-                                <p><strong>GANADOR</strong><br><br> Categoría Audiovisual de los Premios de Periodismo
-                                    Universitario El Anzuelo Medios 2024.</p>
-                            </div>
-                    </div>
-                </article>
-                <article class="tarjetaPortafolio" data-premio="true">
-                    <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://youtube.com/playlist?list=PLwZ251E6wz6372wXEHc7djyApc1PsJsAh" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                        </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/romperCadenas.png" alt="">
-                        <div class="notificacion">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
-                        </div>
-                        <div class="contenidoTarjeta">
-                            <h6>Documental</h6>
-                            <h2>Romper Cadenas</h2>
-                            <ul>
-                                <li>Camarografía.</li>
-                                <li>Edición de video.</li>
-                                <li>Composición musical.</li>
-                                <li>Musicalización.</li>
-                            </ul>
-                        </div>
                         <div class="contenidoOculto" style="display: none;">
-                            <p>
-                                <strong>NOMINADO</strong><br><br>Categoría Periodismo en Paz y Reconciliación de los
-                                Premios Nacionales de Periodismo Alfonso Bonilla
-                                Aragón 2024.
+                            <p><strong>GANADOR</strong><br><br>
+                                Categoría Audiovisual de los Premios de Periodismo Universitario El Anzuelo Medios 2024.
                             </p>
                         </div>
                     </div>
                 </article>
-                <article class="tarjetaPortafolio" data-premio="false">
-                    <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://youtu.be/zCVsUJHwdko" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                        </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/eliasFigueroa.png" alt="">
-                        
-                        <div class="contenidoTarjeta">
-                            <h6>Video Promocional</h6>
-                            <h2>Vota por Elías Figueroa</h2>
-                            <ul>
-                                <li>Conceptualización.</li>
-                                <li>Edición de video.</li>
-                                <li>Musicalización.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjetaPortafolio" data-premio="false">
-                    <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://youtu.be/sAC5t-6AG2s?si=FhLie_ol-gkB6WWm" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                        </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/torneoPromo.png" alt="">
-                        <div class="contenidoTarjeta">
-                            <h6>Video Promocional</h6>
-                            <h2>Torneo 2v2 Hardcore</h2>
-                            <ul>
-                                <li>Producción.</li>
-                                <li>Edición de video.</li>
-                                <li>Musicalización.</li>
-                                <li>Locución.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjetaPortafolio" data-premio="false">
-                    <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://youtu.be/eESJ_5YkYmg?si=D_CWmUppKiG034Sw" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                        </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/torneoVivo.png" alt="">
-                        <div class="contenidoTarjeta">
-                            <h6>Transmisión en vivo</h6>
-                            <h2>Torneo 2v2 Hardcore</h2>
-                            <ul>
-                                <li>Dirección.</li>
-                                <li>Producción.</li>
-                                <li>Locución.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjetaPortafolio" data-premio="false">
-                    <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://youtu.be/DAC2-wkI6zE" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                        </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/radioUsc.png" alt="">
-                        <div class="contenidoTarjeta">
-                            <h6>Jingle</h6>
-                            <h2>La Radio USC</h2>
-                            <ul>
-                                <li>Composición.</li>
-                                <li>Grabación.</li>
-                                <li>Producción.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjetaPortafolio" data-premio="false">
-                    <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://www.youtube.com/playlist?list=PLwZ251E6wz61KGinKcPpl-v2KHiJLEv1T" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                        </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/veniTePregunto.png" alt="">
-                        <div class="contenidoTarjeta">
-                            <h6>Serie Web</h6>
-                            <h2>Vení te Pregunto</h2>
-                            <ul>
-                                <li>Dirección.</li>
-                                <li>Edición de video.</li>
-                                <li>Musicalización.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjetaPortafolio" data-premio="false">
-                    <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://drive.google.com/drive/folders/12d6MAERXE8LIQvGn9LHZUkqM1v9mtSgf?usp=sharing" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                            </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/retroSoundRadio.png" alt="">
-                        <div class="contenidoTarjeta">
-                            <h6>Videos para Redes Sociales</h6>
-                            <h2>Retro Sound Radio Beats</h2>
-                            <ul>
-                                <li>Conceptualización.</li>
-                                <li>Producción.</li>
-                                <li>Edición de video.</li>
-                                <li>Musicalización.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjetaPortafolio" data-premio="false">
-                    <div class="transparent">
-                        <div class="contenedorTarjeta">
-                            <a class="playTarjeta" href="https://www.youtube.com/playlist?list=PLwZ251E6wz60UjnTsgx8Wk-Hkn8DGW7ZK" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
-                            </a>
-                        </div>
-                        <img class="imgTarjeta" src="../assets/imgPortafolio/iLove.png" alt="">
-                        <div class="contenidoTarjeta">
-                            <h6>Videos para Redes Sociales</h6>
-                            <h2>I Love 80s, 90s & 2000</h2>
-                            <ul>
-                                <li>Conceptualización.</li>
-                                <li>Edición de video.</li>
-                                <li>Musicalización.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
                 
+                <!-- Romper Cadenas -->
+                <article class="tarjetaPortafolio" data-premio="true">
+                    <div class="transparent">
+                        <a class="linkImagen" href="https://youtube.com/playlist?list=PLwZ251E6wz6372wXEHc7djyApc1PsJsAh" target="_blank" rel="noopener noreferrer" aria-label="Abrir documental Romper Cadenas en YouTube">
+                        <img class="imgTarjeta" src="../assets/imgPortafolio/romperCadenas.png" alt="Documental Romper Cadenas">
+                        <span class="playTarjeta" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                        </span>
+                    </a>
+                    <div class="notificacion">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+                    </div>
+                    <div class="contenidoTarjeta">
+                        <h6>Documental</h6>
+                        <h2>Romper Cadenas</h2>
+                        <ul>
+                            <li>Camarografía.</li>
+                            <li>Edición de video.</li>
+                            <li>Composición musical.</li>
+                        <li>Musicalización.</li>
+                    </ul>
+                    </div>
+                    <div class="contenidoOculto" style="display: none;">
+                        <p>
+                            <strong>NOMINADO</strong><br><br>
+                            Categoría Periodismo en Paz y Reconciliación de los
+                            Premios Nacionales de Periodismo Alfonso Bonilla Aragón 2024.
+                        </p>
+                    </div>
+                </div>
+                </article>
+
+                <!-- Comercial Osa -->
+                <article class="tarjetaPortafolio" data-premio="false">
+                    <div class="transparent">
+                        <a class="linkImagen" href="https://youtu.be/k-x25em8U10" target="_blank" rel="noopener noreferrer" aria-label="Abrir video promocional Laboratorios OSA">
+                        <img class="imgTarjeta" src="../assets/imgPortafolio/osa.jpg" alt="Laboratorios OSA">
+                        <span class="playTarjeta" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                        </span>
+                        </a>
+                        <div class="contenidoTarjeta">
+                            <h6>Video Promocional</h6>
+                            <h2>Laboratorios OSA</h2>
+                            <ul>
+                                <li>Camarografía.</li>
+                                <li>Edición de video.</li>
+                                <li>Musicalización.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Elías Figueroa -->
+                <article class="tarjetaPortafolio" data-premio="false">
+                <div class="transparent">
+                    <a class="linkImagen" href="https://youtu.be/zCVsUJHwdko" target="_blank" rel="noopener noreferrer" aria-label="Abrir video promocional Vota por Elías Figueroa">
+                    <img class="imgTarjeta" src="../assets/imgPortafolio/eliasFigueroa.png" alt="Vota por Elías Figueroa">
+                    <span class="playTarjeta" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                    </span>
+                    </a>
+                    <div class="contenidoTarjeta">
+                        <h6>Video Promocional</h6>
+                        <h2>Vota por Elías Figueroa</h2>
+                        <ul>
+                            <li>Conceptualización.</li>
+                            <li>Edición de video.</li>
+                            <li>Musicalización.</li>
+                    </ul>
+                    </div>
+                </div>
+                </article>
+
+                <!-- Torneo Promo -->
+                <article class="tarjetaPortafolio" data-premio="false">
+                <div class="transparent">
+                    <a class="linkImagen" href="https://youtu.be/8b_HWXQXiLs" target="_blank" rel="noopener noreferrer" aria-label="Abrir video promocional Torneo 2v2 Hardcore">
+                    <img class="imgTarjeta" src="../assets/imgPortafolio/torneoPromo.png" alt="Torneo 2v2 Hardcore Promocional">
+                    <span class="playTarjeta" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                    </span>
+                    </a>
+                    <div class="contenidoTarjeta">
+                        <h6>Video Promocional</h6>
+                        <h2>Torneo 2v2 Hardcore</h2>
+                        <ul>
+                            <li>Producción.</li>
+                            <li>Edición de video.</li>
+                            <li>Musicalización.</li>
+                        <li>Locución.</li>
+                    </ul>
+                    </div>
+                </div>
+                </article>
+
+                <!-- Torneo en Vivo -->
+                <article class="tarjetaPortafolio" data-premio="false">
+                <div class="transparent">
+                    <a class="linkImagen" href="https://youtu.be/5bq6FDt71ns" target="_blank" rel="noopener noreferrer" aria-label="Abrir transmisión en vivo Torneo 2v2 Hardcore">
+                    <img class="imgTarjeta" src="../assets/imgPortafolio/torneoVivo.png" alt="Transmisión Torneo 2v2 Hardcore">
+                    <span class="playTarjeta" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                    </span>
+                    </a>
+                    <div class="contenidoTarjeta">
+                        <h6>Transmisión en vivo</h6>
+                        <h2>Torneo 2v2 Hardcore</h2>
+                        <ul>
+                            <li>Dirección.</li>
+                            <li>Producción.</li>
+                            <li>Locución.</li>
+                    </ul>
+                    </div>
+                </div>
+                </article>
+
+                <!-- Radio USC -->
+                <article class="tarjetaPortafolio" data-premio="false">
+                <div class="transparent">
+                    <a class="linkImagen" href="https://youtu.be/DAC2-wkI6zE" target="_blank" rel="noopener noreferrer" aria-label="Abrir Jingle La Radio USC">
+                    <img class="imgTarjeta" src="../assets/imgPortafolio/radioUsc.png" alt="Jingle La Radio USC">
+                    <span class="playTarjeta" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                    </span>
+                    </a>
+                    <div class="contenidoTarjeta">
+                        <h6>Jingle</h6>
+                        <h2>La Radio USC</h2>
+                        <ul>
+                            <li>Composición.</li>
+                            <li>Grabación.</li>
+                            <li>Producción.</li>
+                    </ul>
+                    </div>
+                </div>
+                </article>
+
+                <!-- Vení te Pregunto -->
+                <article class="tarjetaPortafolio" data-premio="false">
+                <div class="transparent">
+                    <a class="linkImagen" href="https://www.youtube.com/playlist?list=PLwZ251E6wz61KGinKcPpl-v2KHiJLEv1T" target="_blank" rel="noopener noreferrer" aria-label="Abrir serie web Vení te Pregunto">
+                    <img class="imgTarjeta" src="../assets/imgPortafolio/veniTePregunto.png" alt="Serie web Vení te Pregunto">
+                    <span class="playTarjeta" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                    </span>
+                    </a>
+                    <div class="contenidoTarjeta">
+                        <h6>Serie Web</h6>
+                        <h2>Vení te Pregunto</h2>
+                        <ul>
+                            <li>Dirección.</li>
+                            <li>Edición de video.</li>
+                            <li>Musicalización.</li>
+                    </ul>
+                    </div>
+                </div>
+                </article>
+
+                <!-- Retro Sound Radio -->
+                <article class="tarjetaPortafolio" data-premio="false">
+                <div class="transparent">
+                    <a class="linkImagen" href="https://drive.google.com/drive/folders/12d6MAERXE8LIQvGn9LHZUkqM1v9mtSgf?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Abrir videos Retro Sound Radio Beats en Google Drive">
+                    <img class="imgTarjeta" src="../assets/imgPortafolio/retroSoundRadio.png" alt="Retro Sound Radio Beats">
+                    <span class="playTarjeta" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                    </span>
+                    </a>
+                    <div class="contenidoTarjeta">
+                        <h6>Videos para Redes Sociales</h6>
+                        <h2>Retro Sound Radio Beats</h2>
+                        <ul>
+                            <li>Conceptualización.</li>
+                            <li>Producción.</li>
+                            <li>Edición de video.</li>
+                        <li>Musicalización.</li>
+                    </ul>
+                    </div>
+                </div>
+                </article>
+
+                <!-- I Love 80s, 90s & 2000 -->
+                <article class="tarjetaPortafolio" data-premio="false">
+                <div class="transparent">
+                    <a class="linkImagen" href="https://www.youtube.com/playlist?list=PLwZ251E6wz60UjnTsgx8Wk-Hkn8DGW7ZK" target="_blank" rel="noopener noreferrer" aria-label="Abrir videos I Love 80s, 90s & 2000">
+                    <img class="imgTarjeta" src="../assets/imgPortafolio/iLove.png" alt="I Love 80s, 90s & 2000">
+                    <span class="playTarjeta" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z"></path></svg>
+                    </span>
+                    </a>
+                    <div class="contenidoTarjeta">
+                        <h6>Videos para Redes Sociales</h6>
+                        <h2>I Love 80s, 90s & 2000</h2>
+                        <ul>
+                            <li>Conceptualización.</li>
+                            <li>Edición de video.</li>
+                            <li>Musicalización.</li>
+                    </ul>
+                    </div>
+                </div>
+                </article>
             </div>
         </section>
         
@@ -340,7 +438,7 @@
                 </div>
                 <div>
                     <h2>Signal</h2>
-                    <h3><a href="https://signal.me/#eu/r94a3sZkLg5njKHKILWGFU2SZrxcG_gfyI8l4mB2OpB6Au_dlhtAeLgxN8-GC83G" target="_blank">juan.60</a></h3>
+                    <h3><a href="https://signal.me/#eu/r94a3sZkLg5njKHKILWGFU2SZrxcG_gfyI8l4mB2OpB6Au_dlhtAeLgxN8-GC83G">juan.60</a></h3>
                 </div>
             </article>
         </section>
