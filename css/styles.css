@@ -1,0 +1,759 @@
+/* Configuraciones generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Urbanist", sans-serif;
+    background-color: #0e1822;
+    color: #ffffff;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.botonEsEn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.botonEsEn.escondido {
+    transform: translateY(-100px);
+    transition: transform 0.3s ease; /* Cambiar o borrar si no quiere la animación */
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+button, a {
+    outline: none;
+}
+
+section {
+    min-height: 100vh;
+}
+
+/* navbar */
+.navbar {
+    position: fixed;
+    bottom: 3.4%;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.navbar ul {
+    width: 43vh;
+    height: 9vh;
+    border: 0.1vh solid rgba(255, 255, 255, 0.13);
+    border-radius: 10vh;
+    background-color:  rgba(14, 24, 34, 0.63);
+    backdrop-filter: blur(0.4vh);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar li {
+    list-style: none;
+    background-color: transparent;
+}
+
+.navbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.4vh;
+    height: 4.4vh;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.navbar svg {
+    background-color: transparent;
+    width: 3vh;
+    height: 3vh;
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (hover:none) and (pointer: coarse) {
+    .navbar a:hover {
+        background-color: none;
+    }
+}
+
+.navbar a:hover svg {
+    fill: #ffffff;
+}
+
+.navbar a.active {
+    background-image: linear-gradient(#60abef, #294966);
+    box-shadow: 0 0 1vh 0 rgba(96, 171, 239, 0.38);
+}
+
+.navbar a.active svg {
+    fill: #ffffff;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    a:hover, button:hover {
+        color: inherit; /* Desactiva el hover */
+        background-color: transparent; /* Limpia el fondo */
+    }
+}
+
+/* Botones */
+
+.botonPrimario {
+    padding: 0.9vh 1.8vh;
+    border-radius: 1vh;
+    font-size: 2vh;
+    font-weight: 500;
+    border: 0.4vh solid #60abef;
+    background-color: #60abef;
+    color: #0e1822;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.botonPrimario:hover {
+    color: #60abef;
+    border-color: #60abef;
+    background-color: #0e1822;
+}
+
+.botonPrimario:active {
+    color: #294966;
+    border-color: #294966;
+    background-color: #0e1822;
+}
+
+.botonSecundario {
+    padding: 0.9vh 1.8vh;
+    border-radius: 1vh;
+    font-size: 2vh;
+    font-weight: 500;
+    border: 0.4vh solid #60abef;
+    color: #60abef;
+    background-color: #0e1822;
+    cursor: pointer; /* Preguntar */
+    flex-shrink: 0;
+}
+
+.botonSecundario:hover {
+    color: #0e1822;
+    border-color: #60abef;
+    background-color: #60abef;
+}
+
+.botonSecundario:active {
+    color: #0e1822;
+    border-color: #294966;
+    background-color: #294966;
+}
+
+/* Sección principal */
+
+#principal {
+    background-color: #000;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+}
+
+.encabezadoLandingPage {
+    background-color: transparent;
+    position: absolute;
+    top: 23vh;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.encabezadoLandingPage h2 {
+    background-color: transparent;
+    font-size: 2.4vh;
+    font-weight: 400;
+}
+
+.encabezadoLandingPage h1 {
+    background-color: transparent;
+    font-size: 6vh;
+    padding-top: 1vh;
+}
+
+.encabezadoLandingPage p {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2.4vh;
+    padding-bottom: 4vh;
+}
+
+.encabezadoLandingPage div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.circuloGradiente {
+    background-color: transparent;
+    position: absolute;
+    width: auto;
+    height: 100vh;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+.portada {
+    background-color: transparent;
+    position: absolute;
+    width: auto;
+    height: 58vh; /* 520px */
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 1;
+  }
+
+.encabezadoLandingPage a {
+    background-color: transparent;
+    flex-shrink: 0;
+}
+
+  /* Sección sobre mi */
+
+#sobremi {
+    width: 100%;
+    padding: 5vh 10%;
+}
+
+.tituloSobreMi {
+    display: flex;
+    justify-content: center;
+}
+
+.tituloSobreMi h2 {
+    padding-top: 1vh;
+    font-size: 6vh;
+    color: #60abef;
+}
+
+.contenidoSobreMi {
+    padding: 12.5vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6.6vh;
+}
+
+.contenidoSobreMi img {
+    width: 61vh;
+    height: 47vh;
+    flex-shrink: 0;
+    border-radius: 1vh;
+}
+
+.contenidoSobreMi div {
+    width: 61vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contenidoSobreMi h1 {
+    padding-top: 1vh;
+    padding-bottom: 3.8vh;
+    font-size: 5vh;
+}
+
+.contenidoSobreMi h2 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2.4vh;
+    font-weight: 400;
+}
+
+.contenidoSobreMi p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2vh;
+    line-height: 1.5;
+    padding-bottom: 5vh;
+}
+
+@media (max-width: 140vh) {
+    .contenidoSobreMi { 
+        flex-wrap: wrap; /* para que pase de dos a una columna */
+        gap: 8vh;
+    }
+
+    .contenidoSobreMi div {
+        width: 100%;
+        height: auto;
+    }
+
+    .contenidoSobreMi img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Sección experiencia */
+
+#experiencia {
+    position: relative;
+    background-color: #000;
+    width: 100%;
+    padding: 5vh 10%; /* TODO */
+}
+
+.tituloExperiencia {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.tituloExperiencia h2 {
+    padding-top: 1vh;
+    font-size: 6vh;
+    color: #60abef;
+    background-color: transparent;
+}
+
+.cuerpoExperiencia {
+    padding: 13vh 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 13.2vh;
+    background-color: transparent;
+}
+
+.contenidoExperienciaI, .contenidoExperienciaD {
+    width: 57.5vh;
+    height: 47vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-shrink: 0;
+    background-color: transparent;
+}
+
+.tarjetaExperiencia {
+    padding-bottom: 12vh;
+    background-color: transparent;
+}
+
+.tarjetaExperienciaVacia {
+    padding-bottom: 4vh;
+    background-color: transparent;
+}
+
+.tarjetaExperienciaVaciaPrimera {
+    padding-top: 9vh;
+    background-color: transparent;
+}
+
+.tarjetaExperiencia h6{
+    font-size: 2.5vh;
+    padding-bottom: 0.5vh;
+    background-color: #000;
+}
+
+.tarjetaExperiencia p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2vh;
+    line-height: 1.5;
+    background-color: #000;
+}
+
+.contenidoExperienciaI {
+    text-align: end;
+    align-items: flex-end;
+}
+
+.barraTresPuntos {
+    background-color: transparent;
+    position: absolute;
+    width: auto;
+    height: 40vh;
+    left: 50%;
+    top: 50.75%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.desaparecer {
+    display: none;
+}
+
+@media (orientation: portrait) {
+
+    /* weas nuevas de la actualización */
+
+    .aparecer {
+        display: none;
+    }
+    .desaparecer {
+        display: flex;
+    }
+    .tarjetaExperiencia {
+        padding-bottom: 0.5vh;
+    }
+
+    .tarjetaExperienciaVacia {
+        padding-bottom: 0vh;
+        display: none;
+    }
+
+    .tituloExperiencia {
+        padding-top: 0vh;
+    }
+
+    .cuerpoExperiencia {
+        flex-direction: column; /* Vainas verticales */
+        gap: 0vh; /* Reformateo */
+        padding: 0 20%;
+        align-items: center;
+    }
+
+    .barraTresPuntos {
+        position: absolute;
+        left: 15%;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 2;
+    }
+
+    .contenidoExperienciaI, .contenidoExperienciaD {
+        width: 100%;
+        height: auto;
+        text-align: start;
+        white-space: nowrap;
+    }
+
+    .contenidoExperienciaI {
+        padding-top: 14vh;
+    }
+    
+    .tarjetaExperiencia {
+        margin-bottom: 3vh;
+        width: 100%;
+    }
+}
+
+/* Sección portafolio */
+
+#portafolio {
+    padding: 5vh 0;
+    width: 100%;
+    overflow: visible;
+}
+
+.tituloPortafolio {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.tituloPortafolio h1 {
+    padding-top: 1vh;
+    font-size: 6vh;
+    color: #60abef;
+    background-color: transparent;
+}
+
+.cuerpoPortafolio {
+    padding: 13vh 15vh;
+    display: grid; /* Usar grid */
+    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas */
+    justify-content: center; /* Revisar */
+    align-content: center;
+    gap: 7vh; /* Ajustar */
+    max-width: 10vh; /* Limitar ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.tarjetaPortafolio {
+    width: 38vh;
+    height: 47.4vh;
+    position: relative;
+    background-color: #1b3144;
+    border-radius: 1vh;
+    box-shadow: 0 0 25px 0 rgba( 0, 0, 0, 0.38);
+}
+
+.tarjetaPortafolio:hover .imgTarjeta {
+    filter: brightness(0.4);
+}
+
+.tarjetaPortafolio:hover .playTarjeta {
+    opacity: 1;
+}
+
+.contenedorTarjeta {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 21vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.contenedorTarjeta:hover .playTarjeta {
+    opacity: 1;
+}
+
+.linkImagen {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 21vh;
+    text-decoration: none;
+}
+  
+.imgTarjeta {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+}
+
+.playTarjeta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    background-color: transparent;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.transparent {
+    background-color: transparent;
+    border-radius: 1vh;
+}
+
+.playTarjeta svg {
+    width: 10vh;
+    height: 10vh;
+    fill: #5293cd;
+    background-color: transparent;
+}
+
+.playTarjeta svg:hover {
+    fill: #5293cd;
+}
+
+.playTarjeta svg:active {
+    fill: #5293cd;
+    filter: drop-shadow(0 0 15px #5293cd);
+}
+
+.contenidoTarjeta {
+    padding: 3vh 4.4vh;
+    background-color: transparent;
+}
+
+.contenidoTarjeta h6 {
+    font-size: 1.4vh;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    padding-bottom: 0.5vh;
+}
+
+.contenidoTarjeta h2 {
+    font-size: 2.4vh;
+    color: #5293cd;
+    background-color: transparent;
+    padding-bottom: 1.2vh;
+}
+
+.contenidoTarjeta ul {
+    font-size: 2vh;
+    padding-left: 1.8vh;
+    padding-top: 0.6vh;
+    background-color: transparent;
+}
+
+.contenidoTarjeta li {
+    padding-top: 0.6vh;
+    padding-left: 0.6vh;
+    background-color: transparent;
+}
+
+@media (max-width: 140vh) {
+    .cuerpoPortafolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 90vh) {
+    .cuerpoPortafolio {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+}
+
+/* Notificación */
+
+.contenidoOculto {
+    display: none;
+    padding: 3vh 4.4vh;
+    font-size: 2vh;
+    background-color: transparent;
+}
+
+.contenidoOculto strong {
+    background-color: transparent;
+    font-weight: 900;
+}
+
+.contenidoOculto p {
+    background-color: transparent;
+    line-height: 1.5;
+}
+
+.notificacion {
+    position: absolute;
+    top: -1.6vh;
+    right: -1.6vh;
+    width: 3.2vh;
+    height: 3.2vh;
+    background-color: #60abef;
+    border-radius: 50%;
+    color: #000;
+    font-size: 1.6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation: glow 1s ease-in-out infinite; /* Luz de navidad */
+    z-index: 20;
+    cursor: pointer;
+}
+
+.notificacion svg {
+    fill: #000;
+    background-color: transparent;
+    width: 2vh;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 0 1vh rgba(96, 171, 239, 0);
+    }
+    50% {
+        box-shadow: 0 0 0 1vh rgba(96, 171, 239, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 1vh rgba(96, 171, 239, 0);
+    }
+}
+
+/* Sección de contacto */
+
+#contacto {
+    background-color: #000;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+}
+
+.circuloGradienteContacto {
+    background-color: transparent;
+    position: absolute;
+    width: auto;
+    height: 100vh;
+    left: 50%;
+    transform: translate(-50%) scaleY(-1);
+    z-index: 1;
+}
+
+.tituloContacto {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    position:relative;
+    z-index: 2;
+}
+
+.tituloContacto h1 {
+    padding-top: 6vh;
+    font-size: 6vh;
+    color: #60abef;
+    background-color: transparent;
+}
+
+.contenidoContacto {
+    background-color: transparent;
+    padding-top: 19vh;
+    padding-bottom: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.contenidoContacto div {
+    text-align: center;
+    background-color: transparent;
+}
+
+.contenidoContacto h2 {
+    background-color: transparent;
+    color: #60abef;
+    font-size: 5vh;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+
+.contenidoContacto h3 {
+    background-color: transparent;
+    font-size: 4.1vh;
+    font-weight: 400;
+}
+
+.contenidoContacto a {
+    background-color: transparent;
+}
+
+.contenidoContacto a:hover {
+    color: #60abef;
+}
+
+.contenidoContacto a:active {
+    text-shadow: 0 0 2vh rgba(96, 171, 239, 0.38);
+}
