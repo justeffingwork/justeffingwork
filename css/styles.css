@@ -172,6 +172,13 @@ section {
     z-index: 1;
 }
 
+#landing {
+    background-color: #000;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+}
+
 .encabezadoLandingPage {
     background-color: transparent;
     position: absolute;
@@ -237,6 +244,11 @@ section {
   /* Sección sobre mi */
 
 #sobremi {
+    width: 100%;
+    padding: 5vh 10%;
+}
+
+#aboutme {
     width: 100%;
     padding: 5vh 10%;
 }
@@ -316,6 +328,13 @@ section {
 /* Sección experiencia */
 
 #experiencia {
+    position: relative;
+    background-color: #000;
+    width: 100%;
+    padding: 5vh 10%; /* TODO */
+}
+
+#experience {
     position: relative;
     background-color: #000;
     width: 100%;
@@ -462,6 +481,12 @@ section {
 /* Sección portafolio */
 
 #portafolio {
+    padding: 5vh 0;
+    width: 100%;
+    overflow: visible;
+}
+
+#portfolio {
     padding: 5vh 0;
     width: 100%;
     overflow: visible;
@@ -682,6 +707,13 @@ section {
 /* Sección de contacto */
 
 #contacto {
+    background-color: #000;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+}
+
+#contact {
     background-color: #000;
     position: relative;
     height: 100vh;
