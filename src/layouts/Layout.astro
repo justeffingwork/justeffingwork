@@ -1,0 +1,113 @@
+---
+import theme from '../data/Theme.json';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Favicon -->
+
+		<link rel="icon" href="/favicon.webp" />
+		<link rel="icon" type="image/webp" sizes="16x16" href="/favicon16.webp" />
+		<link rel="icon" type="image/webp" sizes="32x32" href="/favicon32.webp" />
+		<link rel="icon" type="image/webp" sizes="64x64" href="/favicon64.webp" />
+		<link rel="icon" type="image/webp" sizes="128x128" href="/favicon128.webp" />
+
+		<!-- Google Fonts -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<link rel="stylesheet" href={theme.fonts.title.url} />
+		<link rel="stylesheet" href={theme.fonts.main.url} />
+		<link rel="stylesheet" href={theme.fonts.emphasis.url} />
+
+		<title>Juan Gómez</title>
+	</head>
+
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global
+	define:vars={
+		{
+			white: theme.colors.white,
+			gray: theme.colors.gray,
+			red1: theme.colors.red1,
+			red2: theme.colors.red2,
+			black: theme.colors.black,
+
+			title: theme.fonts.title.name,
+            main: theme.fonts.main.name,
+            emphasis: theme.fonts.emphasis.name
+		}
+	}
+>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+	/* Buttons */
+
+	.button1 {
+		width: 14vh;
+		height: 4vh;
+		padding: 0;
+		margin-top: 2vh;
+		border-radius: 10vh;
+		font-family: var(--title);
+		font-size: 1.6vh;
+		font-weight: 200;
+		border: 0.4vh solid var(--red1);
+		background-color: var(--red1);
+		color: var(--white);
+		cursor: pointer;
+		flex-shrink: 0;
+		size: 1.2vh;
+	}
+
+	.button1:hover {
+		color: var(--white);
+		background-color: var(--red2);
+		border-color: var(--red1);
+	}
+
+	.button1:active {
+		color: var(--red1);
+		border-color: var(--red1);
+		background-color: var(--red2);
+		filter: drop-shadow(0 0 1vh var(--red1));
+	}
+
+	.botonSecundario {
+		padding: 0.9vh 1.8vh;
+		border-radius: 1vh;
+		font-size: 2vh;
+		font-weight: 500;
+		border: 0.4vh solid #60abef;
+		color: #60abef;
+		background-color: #0e1822;
+		cursor: pointer; /* Preguntar */
+		flex-shrink: 0;
+	}
+
+	.botonSecundario:hover {
+		color: #0e1822;
+		border-color: #60abef;
+		background-color: #60abef;
+	}
+
+	.botonSecundario:active {
+		color: #0e1822;
+		border-color: #294966;
+		background-color: #294966;
+	}
+
+</style>

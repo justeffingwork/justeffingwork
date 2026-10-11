@@ -1,0 +1,132 @@
+---
+import theme from '../data/Theme.json';
+---
+
+<section id="contact">
+    <h1>CONTACTO</h1>
+
+    <div class="contactBox">
+        <form>
+            <div class="field">
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="field">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="field">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="button1">
+                Enviar formulario
+            </button>
+        </form>
+    </div>
+</section>
+
+<style
+    define:vars={{
+        white: theme.colors.white,
+        gray: theme.colors.gray,
+        black: theme.colors.black,
+        red2: theme.colors.red2,
+        title: theme.fonts.title.name,
+        main: theme.fonts.main.name
+    }}
+>
+    #contact {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to top, var(--red2), var(--black));
+        z-index: 1;
+    }
+
+    #contact h1 {
+        margin: 0 0 6vh;
+        font-family: var(--title);
+        font-size: 5vh;
+        font-weight: 800;
+        color: var(--white);
+        filter: drop-shadow(0 0 1vh var(--gray));
+    }
+
+    .contactBox {
+        width: 45vh;
+        padding: 4vh;
+        margin-bottom: 10vh;
+        box-sizing: border-box;
+        background-color: var(--black);
+        border: 0.2vh solid var(--red2);
+        border-radius: 2vh;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8vh;
+    }
+
+    label {
+        font-family: var(--main);
+        font-size: 1.6vh;
+        font-weight: 200;
+        color: var(--white);
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.8vh;
+        font-family: var(--main);
+        font-size: 1.2vh;
+        color: var(--white);
+        background-color: var(--black);
+        border: 0.01vh solid var(--gray);
+        border-radius: 0.5vh;
+        outline: none;
+        resize: none;
+    }
+
+    input {
+        height: 4vh;
+    }
+
+    textarea {
+        height: 10vh;
+        margin-bottom: 10vh;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: var(--white);
+    }
+
+    form .button1 {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+        .contactBox {
+            width: 80vw;
+            padding: 4vw;
+        }
+    }
+</style>

@@ -1,0 +1,170 @@
+    ---
+    import theme from '../data/Theme.json';
+    ---
+
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="#main">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 1 24 24">
+                        <path d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59 7-7 7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z"></path>
+                    </svg>
+                </a>
+            </li>
+
+            <li>
+                <a href="#portfolio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M20 3H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h7v3H8v2h8v-2h-3v-3h7c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 15V5h16l.001 10H4z"></path>
+                        <path d="m10 13 5-3-5-3z"></path>
+                    </svg>
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+                    </svg>
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <style 
+        define:vars={
+            {
+                white: theme.colors.white,
+                gray: theme.colors.gray,
+                red1: theme.colors.red1,
+                red2: theme.colors.red2,
+                black: theme.colors.black
+            }
+        }>
+        .navbar {
+            position: fixed;
+            bottom: 5%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .navbar ul {
+            width: 30vh;
+            height: 7vh;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 10vh;
+            background-color: color-mix(in srgb, var(--black) 50%, transparent);
+            backdrop-filter: blur(0.4vh);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .navbar li {
+            list-style: none;
+        }
+
+        .navbar a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4vh;
+            height: 4vh;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+
+        .navbar svg {
+            width: 2.4vh;
+            height: 2.4vh;
+            fill: color-mix(in srgb, var(--white) 50%, transparent);
+        }
+
+        .navbar a:hover {
+            background-color: var(--gray);
+        }
+
+        .navbar a:hover svg {
+            fill: var(--white);
+        }
+
+        .navbar a.active {
+            background-color: var(--red1);
+            box-shadow: 0 0 2vh var(--red1);
+        }
+
+        .navbar a.active svg {
+            fill: var(--white);
+        }
+        
+    </style>
+
+    <script>
+        // Código de funcionamiento para en navbar
+
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".navbar a");
+
+        const observerOptions = {
+            root: null, // Viewport de referencia
+            threshold: 0.4 // Se activa al tener el 40% del viewport visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach((link) => link.classList.remove("active"));
+
+                    const activeLink = document.querySelector(`.navbar a[href="#${entry.target.id}"]`);
+                    if (activeLink) activeLink.classList.add("active");
+                }
+
+            });
+        }, observerOptions);
+
+        sections.forEach((section) => observer.observe(section));
+
+        // Esto soluciona algunos problemas del navbar
+
+        window.addEventListener("scroll", () => {
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.6 && rect.bottom >= window.innerHeight * 0.4) {
+                    navLinks.forEach((link) => link.classList.remove("active"));
+
+                    const activeLink = document.querySelector(`.navbar a[href="#${section.id}"]`);
+                    if (activeLink) activeLink.classList.add("active");
+                }
+            });
+        });
+        
+        // Evitar que aparezca el # en la URL al navegar
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+
+                const target = document.querySelector(
+                    link.getAttribute("href")!
+                );
+
+                target?.scrollIntoView({
+                    behavior: "instant"
+                });
+            });
+        });
+
+    </script>

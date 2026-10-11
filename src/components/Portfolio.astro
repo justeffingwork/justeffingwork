@@ -1,0 +1,595 @@
+---
+import theme from '../data/Theme.json';
+import projectsData from '../data/Projects.json';
+
+const projects = projectsData.projects;
+---
+
+<section id="portfolio">
+    <h1>PORTAFOLIO</h1>
+
+    <!-- filters -->
+    <div class="categoryButtons">
+        <button class="categoryButton active" data-category="Todos">
+            Todos
+        </button>
+
+        <div class="filterMenu">
+            <button class="filterToggle">
+                Filtros
+            </button>
+
+            <div class="filterOptions">
+                <button class="categoryButton" data-category="Narrativos">
+                    Narrativos
+                </button>
+
+                <button class="categoryButton" data-category="Comerciales">
+                    Comerciales
+                </button>
+
+                <button class="categoryButton" data-category="Gaming">
+                    Gaming
+                </button>
+
+                <button class="categoryButton" data-category="Verticales">
+                    Verticales
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- carousel -->
+    <button class="carouselArrow prev" aria-label="Proyecto anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <!-- boxicons v3.0.8 https://boxicons.com | license https://docs.boxicons.com/free -->
+            <path d="M14.29 6.29 8.59 12l5.7 5.71 1.42-1.42-4.3-4.29 4.3-4.29z"></path>
+        </svg>
+    </button>
+
+    <div class="portfolioCarousel">
+        {
+            projects.map((project) => (
+                <article
+                    class="projectCard"
+                    data-categories={project.categories.join(',')}
+                >
+                    <img src={project.image} alt={project.title} />
+
+                    <!-- laurel -->
+                    {
+                        project.laurel.enabled && (
+                            <img
+                                class="laurel"
+                                src={project.laurel.image}
+                                alt="Proyecto premiado"
+                            />
+                        )
+                    }
+
+                    <!-- project information -->
+                    <div class="projectInfo">
+                        <div class="projectText">
+                            <p class="subtitle">
+                                {project.subtitle}
+                            </p>
+
+                            <h2>
+                                {project.title}
+                            </h2>
+                        </div>
+
+                        <!-- video link -->
+                        {
+                            project.video.youtube && (
+                                <a
+                                    class="projectLink"
+                                    href={project.video.youtube}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Ver ${project.title}`}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <!-- boxicons v3.0.8 https://boxicons.com | license https://docs.boxicons.com/free -->
+                                        <path d="M6.51 18.87c.15.09.32.13.49.13s.36-.05.51-.14l10-6c.3-.18.49-.51.49-.86s-.18-.68-.49-.86l-10-6a.99.99 0 0 0-1.01-.01c-.31.18-.51.51-.51.87v12c0 .36.19.69.51.87Z"></path>
+                                    </svg>
+                                </a>
+                            )
+                        }
+
+                        <!-- drive link -->
+                        {
+                            project.video.drive && (
+                                <a
+                                    class="projectLink"
+                                    href={project.video.drive}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Ver ${project.title}`}
+                                >
+                                    <svg class="driveIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <!-- boxicons v3.0.8 https://boxicons.com | license https://docs.boxicons.com/free -->
+                                        <path d="M17 16V7H8v2h5.59l-6.3 6.29 1.42 1.42 6.29-6.3V16z"></path>
+                                    </svg>
+                                </a>
+                            )
+                        }
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+
+    <button class="carouselArrow next" aria-label="Proyecto siguiente">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <!-- boxicons v3.0.8 https://boxicons.com | license https://docs.boxicons.com/free -->
+            <path d="m9.71 17.71 5.7-5.71-5.7-5.71-1.42 1.42 4.3 4.29-4.3 4.29z"></path>
+        </svg>
+    </button>
+</section>
+
+<style
+    define:vars={{
+        white: theme.colors.white,
+        gray: theme.colors.gray,
+        black: theme.colors.black,
+        red1: theme.colors.red1,
+        red2: theme.colors.red2,
+        title: theme.fonts.title.name,
+        main: theme.fonts.main.name
+    }}
+>
+    /* portfolio */
+    #portfolio {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        height: 100vh;
+        padding-top: 8vh;
+        overflow: hidden;
+        background: linear-gradient(to top, var(--black), var(--red2));
+    }
+
+    /* title */
+    #portfolio h1 {
+        margin: 0 0 4vh;
+        color: var(--white);
+        font-family: var(--title);
+        font-size: 5vh;
+        font-weight: 800;
+        filter: drop-shadow(0 0 1vh var(--gray));
+    }
+
+    /* category buttons */
+    .categoryButtons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2vh;
+        margin-bottom: 5vh;
+    }
+
+    .categoryButton,
+    .filterToggle {
+        padding: 0.8vh 2vh;
+        border: 0.2vh solid var(--red1);
+        border-radius: 10vh;
+        color: var(--white);
+        background: transparent;
+        font-family: var(--title);
+        font-size: 1.5vh;
+        font-weight: 500;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .categoryButton:hover,
+    .categoryButton.active,
+    .filterToggle:hover {
+        border-color: var(--red1);
+        color: var(--white);
+        background-color: var(--red1);
+    }
+
+    .categoryButton.active {
+        filter: drop-shadow(0 0 1vh var(--red1));
+    }
+
+    /* filter menu */
+    .filterMenu {
+        display: contents;
+    }
+
+    .filterToggle {
+        display: none;
+    }
+
+    .filterOptions {
+        display: flex;
+        align-items: center;
+        gap: 2vh;
+    }
+
+    /* carousel */
+    .portfolioCarousel {
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+        gap: 3vh;
+        padding: 0 3vh;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .portfolioCarousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* project cards */
+    .projectCard {
+        position: relative;
+        flex: 0 0 80vh;
+        height: 43vh;
+        margin-top: 7vh;
+        overflow: hidden;
+        border-radius: 2vh;
+        background-color: var(--black);
+    }
+
+    .projectCard > img:first-child {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* laurel */
+    .laurel {
+        position: absolute;
+        z-index: 3;
+        top: 3vh;
+        left: 3vh;
+        width: 21vh;
+        height: auto;
+    }
+
+    /* project information */
+    .projectInfo {
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 5vh;
+    }
+
+    .projectText {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projectText .subtitle {
+        margin: 0;
+        color: var(--gray);
+        font-family: var(--main);
+        font-size: 1.7vh;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    .projectText h2 {
+        margin: 0;
+        color: var(--white);
+        font-family: var(--title);
+        font-size: 3vh;
+        font-weight: 600;
+        letter-spacing: 0.2vh;
+    }
+
+    /* video and drive links */
+    .projectLink {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 8vh;
+        height: 8vh;
+        margin: -2vh;
+        border: 0.4vh solid var(--red1);
+        border-radius: 50%;
+        color: var(--white);
+        background-color: var(--red1);
+        text-decoration: none;
+    }
+
+    .projectLink svg {
+        width: 5vh;
+        height: 5vh;
+    }
+
+    .driveIcon {
+        width: 7vh !important;
+        height: 7vh !important;
+    }
+
+    .projectLink:hover {
+        border-color: var(--red1);
+        background-color: var(--red2);
+    }
+
+    .projectLink:active {
+        filter: drop-shadow(0 0 1vh var(--red1));
+    }
+
+    /* carousel arrows */
+    .carouselArrow {
+        position: absolute;
+        z-index: 5;
+        top: 55%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5vh;
+        height: 5vh;
+        transform: translateY(-50%);
+        border: 0.2vh solid var(--black);
+        border-radius: 50%;
+        color: var(--white);
+        background-color: var(--black);
+        font-size: 2.5vh;
+        cursor: pointer;
+    }
+
+    .carouselArrow.prev {
+        left: 17vh;
+    }
+
+    .carouselArrow.next {
+        right: 17vh;
+    }
+
+    /* mobile layout */
+    @media (max-width: 768px) {
+        .projectCard {
+            flex: 0 0 35vh;
+        }
+
+        .categoryButtons {
+            gap: 2vh;
+        }
+
+        .filterMenu {
+            position: relative;
+            display: block;
+        }
+
+        .filterToggle {
+            display: block;
+        }
+
+        .filterOptions {
+            position: absolute;
+            top: calc(100% + 1vh);
+            right: 0;
+            z-index: 20;
+            display: none;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1vh;
+            padding: 1vh;
+            border: 0.2vh solid var(--red1);
+            border-radius: 1vh;
+            background-color: var(--black);
+        }
+
+        .filterMenu.open .filterOptions {
+            display: flex;
+        }
+
+        .carouselArrow.prev {
+            left: 2vh;
+        }
+
+        .carouselArrow.next {
+            right: 2vh;
+        }
+
+        /* image focus */
+        .projectCard > img:first-child {
+            object-position: 80% center;
+        }
+
+        .laurel {
+            width: 15vh;
+            top: 1.5vh;
+            left: 1.5vh;
+        }
+
+        /* card text */
+        .projectText h2 {
+            font-size: 2.2vh;
+        }
+
+        .projectText .subtitle {
+            font-size: 1.4vh;
+        }
+
+        .projectInfo {
+            padding: 3vh;
+        }
+
+        .projectText {
+            transform: translate(-1vh, 1vh);
+        }
+
+        /* video and drive buttons */
+        .projectLink {
+            width: 6vh;
+            height: 6vh;
+        }
+
+        .projectLink svg {
+            width: 4vh;
+            height: 4vh;
+        }
+
+        /*
+        .carouselArrow {
+            display: none;
+        }
+        */
+    }
+
+    /* tablet layout */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .projectCard {
+            flex: 0 0 60vh;
+        }
+    }
+</style>
+
+<script>
+    const buttons =
+        document.querySelectorAll<HTMLButtonElement>('.categoryButton');
+
+    const cards =
+        document.querySelectorAll<HTMLElement>('.projectCard');
+
+    const filterMenu =
+        document.querySelector<HTMLDivElement>('.filterMenu');
+
+    const filterToggle =
+        document.querySelector<HTMLButtonElement>('.filterToggle');
+
+    // filter menu
+    filterToggle?.addEventListener('click', () => {
+        filterMenu?.classList.toggle('open');
+    });
+
+    // filter project cards
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const category = button.dataset.category ?? '';
+
+            buttons.forEach((item) => {
+                item.classList.remove('active');
+            });
+
+            button.classList.add('active');
+            filterMenu?.classList.remove('open');
+
+            cards.forEach((card) => {
+                const categories =
+                    card.dataset.categories?.split(',') ?? [];
+
+                if (
+                    category === 'Todos' ||
+                    categories.includes(category)
+                ) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // carousel controls
+    const carousel =
+        document.querySelector<HTMLDivElement>('.portfolioCarousel');
+
+    const prevArrow =
+        document.querySelector<HTMLButtonElement>('.carouselArrow.prev');
+
+    const nextArrow =
+        document.querySelector<HTMLButtonElement>('.carouselArrow.next');
+
+    if (carousel && prevArrow && nextArrow) {
+        const moveCarousel = (direction: number) => {
+            const visibleCards = Array.from(
+                carousel.querySelectorAll<HTMLElement>('.projectCard')
+            ).filter((card) => card.style.display !== 'none');
+
+            if (visibleCards.length === 0) return;
+
+            const cardWidth =
+                visibleCards[0].getBoundingClientRect().width;
+
+            const gap =
+                parseFloat(getComputedStyle(carousel).gap) || 0;
+
+            const step = cardWidth + gap;
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+            if (
+                direction > 0 &&
+                carousel.scrollLeft >= maxScroll - 5
+            ) {
+                carousel.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else if (
+                direction < 0 &&
+                carousel.scrollLeft <= 5
+            ) {
+                carousel.scrollTo({
+                    left: maxScroll,
+                    behavior: 'smooth'
+                });
+            } else {
+                carousel.scrollBy({
+                    left: direction * step,
+                    behavior: 'smooth'
+                });
+            }
+        };
+
+        nextArrow.addEventListener('click', () => {
+            moveCarousel(1);
+        });
+
+        prevArrow.addEventListener('click', () => {
+            moveCarousel(-1);
+        });
+
+        // autoplay
+        let autoplay = window.setInterval(() => {
+            moveCarousel(1);
+        }, 30000);
+
+        const resetAutoplay = () => {
+            window.clearInterval(autoplay);
+
+            autoplay = window.setInterval(() => {
+                moveCarousel(1);
+            }, 30000);
+        };
+
+        nextArrow.addEventListener('click', resetAutoplay);
+        prevArrow.addEventListener('click', resetAutoplay);
+
+        // reset carousel when filtering
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                carousel.scrollTo({
+                    left: 0,
+                    behavior: 'instant'
+                });
+
+                resetAutoplay();
+            });
+        });
+    }
+</script>
