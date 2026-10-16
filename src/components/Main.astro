@@ -5,7 +5,7 @@ import reel from '../assets/reel-placeholder.webm';
 
 <section id="main">
     <div class="background">
-        <video class="backgroundVideo" src={reel} autoplay muted playsinline></video>
+        <video class="backgroundVideo" src={reel} autoplay muted playsinline loop></video>
     </div>
 
     <div class="gradient"></div>
@@ -168,6 +168,10 @@ import reel from '../assets/reel-placeholder.webm';
         .mainButtons {
             left: 6vh;
             right: 6vh;
+        }
+
+        .mainTitle {
+            margin-top: 0dvh;
         }
 
         .mainTitle h1,

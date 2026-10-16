@@ -189,10 +189,15 @@ const projects = projectsData.projects;
 
     .categoryButton:hover,
     .categoryButton.active,
-    .filterToggle:hover {
+    .filterToggle:hover,
+    .filterToggle.active {
         border-color: var(--red1);
         color: var(--white);
         background-color: var(--red1);
+    }
+
+    .filterToggle.active {
+        filter: drop-shadow(0 0 1vh var(--red1));
     }
 
     .categoryButton.active {
@@ -265,9 +270,7 @@ const projects = projectsData.projects;
     .projectInfo {
         position: absolute;
         z-index: 3;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        inset: 0;
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
@@ -294,7 +297,6 @@ const projects = projectsData.projects;
         font-family: var(--title);
         font-size: 3vh;
         font-weight: 600;
-        letter-spacing: 0.2vh;
     }
 
     /* video and drive links */
@@ -362,6 +364,7 @@ const projects = projectsData.projects;
     /* mobile layout */
     @media (max-width: 768px) {
         .projectCard {
+            margin-top: 4vh;
             flex: 0 0 35vh;
         }
 
@@ -407,7 +410,7 @@ const projects = projectsData.projects;
 
         /* image focus */
         .projectCard > img:first-child {
-            object-position: 80% center;
+            object-position: center;
         }
 
         .laurel {
@@ -426,11 +429,21 @@ const projects = projectsData.projects;
         }
 
         .projectInfo {
-            padding: 3vh;
+            padding: 4 vh;
         }
 
         .projectText {
             transform: translate(-1vh, 1vh);
+        }
+
+        /* play and drive buttons */
+        .projectInfo .projectLink {
+            position: absolute;
+            top: 2.5vh;
+            right: 2.5vh;
+            margin: 0;
+            width: 6vh;
+            height: 6vh;
         }
 
         /* video and drive buttons */
@@ -489,6 +502,14 @@ const projects = projectsData.projects;
             button.classList.add('active');
             filterMenu?.classList.remove('open');
 
+            // keep the filter button active when a menu category is selected
+            if (filterToggle) {
+                filterToggle.classList.toggle(
+                    'active',
+                    category !== 'Todos'
+                );
+            }
+
             cards.forEach((card) => {
                 const categories =
                     card.dataset.categories?.split(',') ?? [];
@@ -532,28 +553,16 @@ const projects = projectsData.projects;
             const step = cardWidth + gap;
             const maxScroll = carousel.scrollWidth - carousel.clientWidth;
 
-            if (
-                direction > 0 &&
-                carousel.scrollLeft >= maxScroll - 5
-            ) {
-                carousel.scrollTo({
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            } else if (
-                direction < 0 &&
-                carousel.scrollLeft <= 5
-            ) {
-                carousel.scrollTo({
-                    left: maxScroll,
-                    behavior: 'smooth'
-                });
-            } else {
-                carousel.scrollBy({
-                    left: direction * step,
-                    behavior: 'smooth'
-                });
-            }
+            carousel.scrollTo({
+                left: Math.max(
+                    0,
+                    Math.min(
+                        maxScroll,
+                        carousel.scrollLeft + direction * step
+                    )
+                ),
+                behavior: 'smooth'
+            });
         };
 
         nextArrow.addEventListener('click', () => {
@@ -564,22 +573,6 @@ const projects = projectsData.projects;
             moveCarousel(-1);
         });
 
-        // autoplay
-        let autoplay = window.setInterval(() => {
-            moveCarousel(1);
-        }, 30000);
-
-        const resetAutoplay = () => {
-            window.clearInterval(autoplay);
-
-            autoplay = window.setInterval(() => {
-                moveCarousel(1);
-            }, 30000);
-        };
-
-        nextArrow.addEventListener('click', resetAutoplay);
-        prevArrow.addEventListener('click', resetAutoplay);
-
         // reset carousel when filtering
         buttons.forEach((button) => {
             button.addEventListener('click', () => {
@@ -588,8 +581,63 @@ const projects = projectsData.projects;
                     behavior: 'instant'
                 });
 
-                resetAutoplay();
             });
         });
     }
+
+    // drag carousel with mouse
+    if (carousel) {
+        let isDragging = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+        let hasDragged = false;
+
+        carousel.addEventListener('mousedown', (event) => {
+            if (event.button !== 0) return;
+
+            isDragging = true;
+            hasDragged = false;
+            startX = event.clientX;
+            startScrollLeft = carousel.scrollLeft;
+
+            carousel.style.scrollBehavior = 'auto';
+            carousel.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', (event) => {
+            if (!isDragging) return;
+
+            const distance = event.clientX - startX;
+
+            if (Math.abs(distance) > 5) {
+                hasDragged = true;
+            }
+
+            if (hasDragged) {
+                carousel.scrollLeft = startScrollLeft - distance;
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+
+            isDragging = false;
+            carousel.style.scrollBehavior = 'smooth';
+            carousel.style.cursor = '';
+        });
+
+        // prevent opening links after dragging
+        carousel.addEventListener('click', (event) => {
+            if (hasDragged) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        }, true);
+
+        // avoid dragging project images as files
+        carousel.querySelectorAll('img').forEach((img) => {
+            img.draggable = false;
+        });
+    }
+
 </script>

@@ -6,7 +6,11 @@ import theme from '../data/Theme.json';
     <h1>CONTACTO</h1>
 
     <div class="contactBox">
-        <form>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="6b59b594-f8ae-4c98-89de-5444db7b67fb" />
+            <input type="hidden" name="subject" value="Contacto juango.pro" />
+            <input type="hidden" name="redirect" value="https://www.juango.pro/">
+
             <div class="field">
                 <label for="name">Nombre completo</label>
                 <input type="text" id="name" name="name" required />
