@@ -1,0 +1,31 @@
+{
+    "nav": {
+        "portfolio": "Portafolio",
+        "about": "Sobre mí",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "role": "Productor Audiovisual"
+    },
+    "portfolio": {
+        "title": "PORTAFOLIO",
+        "all": "Todos",
+        "filters": "Filtros",
+        "narrative": "Narrativos",
+        "commercial": "Comerciales",
+        "gaming": "Gaming",
+        "vertical": "Verticales"
+    },
+    "about": {
+        "title": "Hola, soy",
+        "aboutme": "Comunicador social con <i>tres años de experiencia</i> en producción audiovisual para proyectos narrativos, comerciales, gaming y verticales.<br><br>Un buen mensaje se queda corto sin una planeación adecuada que defina la intención de su transmisor y un enfoque claro para el público objetivo; mi trabajo es, precisamente, <i>ayudar a comunicarte con tu audiencia</i> de manera única y efectiva.",
+        "download": "Descargar CV"
+    },
+    "contact": {
+        "title": "CONTACTO",
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "message": "Mensaje",
+        "send": "Enviar formulario"
+    }
+}

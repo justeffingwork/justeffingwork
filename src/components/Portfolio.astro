@@ -6,33 +6,33 @@ const projects = projectsData.projects;
 ---
 
 <section id="portfolio">
-    <h1>PORTAFOLIO</h1>
+    <h1 data-i18n="portfolio.title">PORTAFOLIO</h1>
 
     <!-- filters -->
     <div class="categoryButtons">
-        <button class="categoryButton active" data-category="Todos">
+        <button data-i18n="portfolio.all" class="categoryButton active" data-category="Todos">
             Todos
         </button>
 
         <div class="filterMenu">
-            <button class="filterToggle">
+            <button data-i18n="portfolio.filters" class="filterToggle">
                 Filtros
             </button>
 
             <div class="filterOptions">
-                <button class="categoryButton" data-category="Narrativos">
+                <button data-i18n="portfolio.narrative" class="categoryButton" data-category="Narrativos">
                     Narrativos
                 </button>
 
-                <button class="categoryButton" data-category="Comerciales">
+                <button data-i18n="portfolio.commercial" class="categoryButton" data-category="Comerciales">
                     Comerciales
                 </button>
 
-                <button class="categoryButton" data-category="Gaming">
+                <button data-i18n="portfolio.gaming" class="categoryButton" data-category="Gaming">
                     Gaming
                 </button>
 
-                <button class="categoryButton" data-category="Verticales">
+                <button data-i18n="portfolio.vertical" class="categoryButton" data-category="Verticales">
                     Verticales
                 </button>
             </div>
@@ -49,71 +49,73 @@ const projects = projectsData.projects;
 
     <div class="portfolioCarousel">
         {
-            projects.map((project) => (
+            projects.map((project, index) => (
                 <article
                     class="projectCard"
                     data-categories={project.categories.join(',')}
+                    data-project-index={index}
+                    data-title-es={project.title.es}
+                    data-title-en={project.title.en}
+                    data-subtitle-es={project.subtitle.es}
+                    data-subtitle-en={project.subtitle.en}
                 >
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.image} alt={project.title.es} />
 
-                    <!-- laurel -->
-                    {
-                        project.laurel.enabled && (
-                            <img
-                                class="laurel"
-                                src={project.laurel.image}
-                                alt="Proyecto premiado"
-                            />
-                        )
-                    }
+                    {/* laurel */}
+                    <pre>
+                        {JSON.stringify(project.laurel)}
+                    </pre>
+                    {project.laurel.enabled && (
+                        <img
+                            class="laurel"
+                            src={project.laurel.image.es}
+                            data-laurel-es={project.laurel.image.es}
+                            data-laurel-en={project.laurel.image.en}
+                            alt="Proyecto premiado"
+                        />
+                    )}
 
-                    <!-- project information -->
+                    {/* project information */}
                     <div class="projectInfo">
                         <div class="projectText">
-                            <p class="subtitle">
-                                {project.subtitle}
+                            <p class="subtitle" data-project-subtitle>
+                                {project.subtitle.es}
                             </p>
 
-                            <h2>
-                                {project.title}
+                            <h2 data-project-title>
+                                {project.title.es}
                             </h2>
                         </div>
 
-                        <!-- video link -->
-                        {
-                            project.video.youtube && (
-                                <a
-                                    class="projectLink"
-                                    href={project.video.youtube}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={`Ver ${project.title}`}
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <!-- boxicons v3.0.8 https://boxicons.com | license https://docs.boxicons.com/free -->
-                                        <path d="M6.51 18.87c.15.09.32.13.49.13s.36-.05.51-.14l10-6c.3-.18.49-.51.49-.86s-.18-.68-.49-.86l-10-6a.99.99 0 0 0-1.01-.01c-.31.18-.51.51-.51.87v12c0 .36.19.69.51.87Z"></path>
-                                    </svg>
-                                </a>
-                            )
-                        }
+                        {/* video link */}
+                        {project.video.youtube && (
+                            <a
+                                class="projectLink"
+                                href={project.video.youtube}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Ver ${project.title.es}`}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.51 18.87c.15.09.32.13.49.13s.36-.05.51-.14l10-6c.3-.18.49-.51.49-.86s-.18-.68-.49-.86l-10-6a.99.99 0 0 0-1.01-.01c-.31.18-.51.51-.51.87v12c0 .36.19.69.51.87Z"></path>
+                                </svg>
+                            </a>
+                        )}
 
-                        <!-- drive link -->
-                        {
-                            project.video.drive && (
-                                <a
-                                    class="projectLink"
-                                    href={project.video.drive}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={`Ver ${project.title}`}
-                                >
-                                    <svg class="driveIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <!-- boxicons v3.0.8 https://boxicons.com | license https://docs.boxicons.com/free -->
-                                        <path d="M17 16V7H8v2h5.59l-6.3 6.29 1.42 1.42 6.29-6.3V16z"></path>
-                                    </svg>
-                                </a>
-                            )
-                        }
+                        {/* drive link */}
+                        {project.video.drive && (
+                            <a
+                                class="projectLink"
+                                href={project.video.drive}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Ver ${project.title.es}`}
+                            >
+                                <svg class="driveIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17 16V7H8v2h5.59l-6.3 6.29 1.42 1.42 6.29-6.3V16z"></path>
+                                </svg>
+                            </a>
+                        )}
                     </div>
                 </article>
             ))

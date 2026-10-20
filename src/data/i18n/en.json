@@ -1,0 +1,31 @@
+{
+    "nav": {
+        "portfolio": "Portfolio",
+        "about": "About me",
+        "contact": "Contact"
+    },
+    "hero": {
+        "role": "Audiovisual Producer"
+    },
+    "portfolio": {
+        "title": "PORTFOLIO",
+        "all": "All",
+        "filters": "Filters",
+        "narrative": "Narrative",
+        "commercial": "Commercial",
+        "gaming": "Gaming",
+        "vertical": "Vertical"
+    },
+    "about": {
+        "title": "Hi, I'm",
+        "aboutme": "Social communicator with <i>three years of experience</i> in audiovisual production for narrative, commercial, gaming, and vertical projects.<br><br>A good message falls short without proper planning that defines the creator’s original intent and a clear focus on the target audience; my job is, precisely, <i>to help you communicate with your audience </i> in a unique and effective way.",
+        "download": "Download résumé"
+    },
+    "contact": {
+        "title": "CONTACT",
+        "name": "Full name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Submit form"
+    }
+}
