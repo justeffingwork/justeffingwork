@@ -161,6 +161,12 @@ import reel from '/reel-placeholder.webm';
         filter: drop-shadow(0 0 1vh var(--red1));
     }
 
+    .mainButtons button.active {
+        color: var(--red1);
+        filter: drop-shadow(0 0 1vh var(--red1));
+        border-radius: 50%;
+    }
+    
     /* responsive */
 
     @media (max-width: 768px) {
@@ -200,6 +206,8 @@ import reel from '/reel-placeholder.webm';
         if (!video) return;
 
         video.muted = !video.muted;
+
+        soundButton.classList.toggle('active', !video.muted);
 
         soundButton.setAttribute(
             'aria-label',
