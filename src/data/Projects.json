@@ -2,32 +2,6 @@
   "projects": [
     {
       "title": {
-        "es": "prueba de despliegue",
-        "en": "despliegeishon test"
-      },
-      "subtitle": {
-        "es": "prueba",
-        "en": "test"
-      },
-      "image": "/Miniaturas/bianco-thumb.webp",
-      "categories": [
-        "Comerciales",
-        "Verticales"
-      ],
-      "laurel": {
-        "enabled": false,
-        "image": {
-          "es": "",
-          "en": ""
-        }
-      },
-      "video": {
-        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1",
-        "drive": ""
-      }
-    },
-    {
-      "title": {
         "es": "Arteficial",
         "en": "Arteficial"
       },
