@@ -4,7 +4,6 @@ import { Image } from 'astro:assets';
 
 import wall from '../assets/wall.webp';
 import collage from '../assets/collage.webp';
-import cv from '../assets/Hojas de vida/Curriculum Juan Gomez.pdf';
 ---
 
 <section id="about">
@@ -25,7 +24,14 @@ import cv from '../assets/Hojas de vida/Curriculum Juan Gomez.pdf';
             </p>
 
             <div class="aboutActions">
-                <a data-i18n="about.download" href={cv} download="Curriculum Juan Gómez" class="button1">
+                <a
+                    data-i18n="about.download"
+                    data-cv-es="/cvs/Curriculum-Juan-Gomez.pdf"
+                    data-cv-en="/cvs/Juan-Gomez-resume.pdf"
+                    href="/cvs/Curriculum-Juan-Gomez.pdf.pdf"
+                    download="Curriculum Juan Gomez.pdf"
+                    class="button1"
+                >
                     Descargar CV
                 </a>
 

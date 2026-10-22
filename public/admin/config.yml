@@ -1,0 +1,187 @@
+backend:
+  name: github
+  repo: justeffingwork/justeffingwork
+  branch: main
+
+media_folder: public/Miniaturas
+public_folder: /Miniaturas
+
+collections:
+  - name: projects
+    label: Portafolio
+    files:
+      - name: projects
+        label: Proyectos
+        file: src/data/Projects.json
+        fields:
+          - name: projects
+            label: Proyectos
+            widget: list
+            summary: "{{fields.title.es}} — {{fields.subtitle.es}}"
+            fields:
+              - name: title
+                label: Título
+                widget: object
+                fields:
+                  - name: es
+                    label: Título en español
+                    widget: string
+                  - name: en
+                    label: Título en inglés
+                    widget: string
+
+              - name: subtitle
+                label: Subtítulo
+                widget: object
+                fields:
+                  - name: es
+                    label: Subtítulo en español
+                    widget: string
+                  - name: en
+                    label: Subtítulo en inglés
+                    widget: string
+
+              - name: image
+                label: Miniatura
+                widget: image
+                media_folder: /public/Miniaturas
+                public_folder: /Miniaturas
+
+              - name: categories
+                label: Categorías
+                widget: select
+                multiple: true
+                options:
+                  - Narrativos
+                  - Comerciales
+                  - Gaming
+                  - Verticales
+
+              - name: laurel
+                label: Laurel
+                widget: object
+                fields:
+                  - name: enabled
+                    label: Mostrar laurel
+                    widget: boolean
+                    default: false
+
+                  - name: image
+                    label: Imágenes del laurel
+                    widget: object
+                    fields:
+                      - name: es
+                        label: Laurel en español
+                        widget: image
+                        media_folder: /public
+                        public_folder: /
+                        required: false
+                      - name: en
+                        label: Laurel en inglés
+                        widget: image
+                        media_folder: /public
+                        public_folder: /
+                        required: false
+
+              - name: video
+                label: Videos
+                widget: object
+                fields:
+                  - name: youtube
+                    label: Enlace de YouTube
+                    widget: string
+                    required: false
+                  - name: drive
+                    label: Enlace de Google Drive
+                    widget: string
+                    required: false
+
+  - name: settings
+    label: Configuración del sitio
+    files:
+      - name: theme
+        label: Colores del sitio
+        file: src/data/Theme.json
+        fields:
+          - name: colors
+            label: Colores
+            widget: object
+            fields:
+              - name: white
+                label: Blanco cálido
+                widget: color
+              - name: gray
+                label: Gris
+                widget: color
+              - name: red1
+                label: Rojo principal
+                widget: color
+              - name: red2
+                label: Rojo oscuro
+                widget: color
+              - name: black
+                label: Negro
+                widget: color
+
+          - name: fonts
+            label: Fuentes (no editar)
+            widget: object
+            collapsed: true
+            fields:
+              - name: title
+                label: Título
+                widget: object
+                fields:
+                  - name: name
+                    label: Nombre
+                    widget: string
+                  - name: url
+                    label: URL
+                    widget: string
+
+              - name: main
+                label: Principal
+                widget: object
+                fields:
+                  - name: name
+                    label: Nombre
+                    widget: string
+                  - name: url
+                    label: URL
+                    widget: string
+
+              - name: emphasis
+                label: Énfasis
+                widget: object
+                fields:
+                  - name: name
+                    label: Nombre
+                    widget: string
+                  - name: url
+                    label: URL
+                    widget: string
+
+      - name: site_settings
+        label: Archivos del sitio
+        file: src/data/SiteSettings.json
+        fields:
+          - name: cvEs
+            label: Hoja de vida en español (PDF)
+            widget: file
+            media_folder: /public/cvs
+            public_folder: /cvs
+            required: false
+
+          - name: cvEn
+            label: Hoja de vida en inglés (PDF)
+            widget: file
+            media_folder: /public/cvs
+            public_folder: /cvs
+            required: false
+
+          - name: reel
+            label: Reel de inicio (video)
+            widget: file
+            media_folder: /public
+            public_folder: /
+            required: false

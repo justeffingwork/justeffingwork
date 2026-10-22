@@ -1,4 +1,3 @@
-
 import es from '../data/i18n/es.json';
 import en from '../data/i18n/en.json';
 
@@ -29,6 +28,21 @@ function translatePage(language) {
             element.textContent = value;
         }
     });
+
+    // update CV link
+    const cvButton = document.querySelector('[data-cv-es][data-cv-en]');
+
+    if (cvButton) {
+        cvButton.href =
+            language === 'es'
+                ? cvButton.dataset.cvEs
+                : cvButton.dataset.cvEn;
+
+        cvButton.download =
+            language === 'es'
+                ? 'Curriculum Juan Gomez.pdf'
+                : 'Juan Gomez resume.pdf';
+    }
 
     // translate project cards
     document.querySelectorAll('.projectCard').forEach((card) => {
