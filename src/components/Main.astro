@@ -5,7 +5,7 @@ import reel from '/reel-placeholder.webm';
 
 <section id="main">
     <div class="background">
-        <video class="backgroundVideo" src={reel} autoplay muted playsinline loop></video>
+        <video  id="backgroundVideo" class="backgroundVideo" src={reel} autoplay muted playsinline loop></video>
     </div>
 
     <div class="gradient"></div>
@@ -21,7 +21,7 @@ import reel from '/reel-placeholder.webm';
                 <path d="M17 11c-.4 0-.75.23-.91.59l-4 9 1.83.81 1.07-2.41h4.03l1.07 2.41 1.83-.81-4-9a1 1 0 0 0-.91-.59Zm-1.13 6L17 14.46 18.13 17zm-3.62-2.03.49-1.94c-.13-.03-1.6-.43-3.17-1.42 1.4-1.41 2.49-3.26 2.74-5.61h1.68V4h-5V2h-2v2H2v2h8.3c-.25 1.91-1.19 3.34-2.31 4.4C7.3 9.75 6.68 8.96 6.25 8H4.12c.5 1.44 1.33 2.63 2.3 3.61-1.57.99-3.04 1.39-3.17 1.42l.49 1.94c1.18-.3 2.76-.96 4.26-2.02 1.49 1.06 3.08 1.72 4.25 2.02"></path>
             </svg>
         </a>
-        <button>
+        <button id="soundButton" aria-label="Activar sonido">
             <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
                 fill="currentColor" viewBox="0 0 24 24" ><!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free--><path d="M4 17h2.7l5.75 3.83c.17.11.36.17.55.17.16 0 .32-.04.47-.12.33-.17.53-.51.53-.88V4c0-.37-.2-.71-.53-.88-.32-.17-.72-.15-1.03.05L6.69 7h-2.7c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2Zm0-8h3s.06-.02.09-.02c.06 0 .13-.02.19-.04a.6.6 0 0 0 .19-.08c.03-.01.06-.02.08-.03L12 5.87v12.26l-4.45-2.96s-.06-.02-.08-.03c-.06-.03-.12-.06-.19-.08-.06-.02-.13-.03-.19-.04-.03 0-.06-.02-.09-.02H4zm18 3c0-4.09-2.47-7.61-6-9.16v2.24c2.39 1.39 4 3.96 4 6.92s-1.61 5.53-4 6.92v2.24c3.53-1.55 6-5.07 6-9.16"></path><path d="M18 12c0-1.77-.78-3.36-2-4.46v8.92c1.22-1.1 2-2.69 2-4.46"></path>
             </svg>  
@@ -191,3 +191,19 @@ import reel from '/reel-placeholder.webm';
     }
 
 </style>
+
+<script>
+    const video = document.querySelector<HTMLVideoElement>('#backgroundVideo');
+    const soundButton = document.querySelector<HTMLButtonElement>('#soundButton');
+
+    soundButton?.addEventListener('click', () => {
+        if (!video) return;
+
+        video.muted = !video.muted;
+
+        soundButton.setAttribute(
+            'aria-label',
+            video.muted ? 'Activar sonido' : 'Silenciar'
+        );
+    });
+</script>
