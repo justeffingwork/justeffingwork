@@ -3,6 +3,15 @@ backend:
   repo: justeffingwork/justeffingwork
   branch: main
 
+site_url: https://www.juango.pro
+display_url: https://www.juango.pro
+
+app_title: Juan Gómez | Administrador
+
+logo:
+  src: /favicon.webp
+  show_in_header: true
+
 media_folder: public/Miniaturas
 public_folder: /Miniaturas
 
