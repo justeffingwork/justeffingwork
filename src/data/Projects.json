@@ -9,6 +9,10 @@
         "es": "Cortometraje",
         "en": "Short film"
       },
+      "image": "/Miniaturas/arteficial-thumb.webp",
+      "categories": [
+        "Narrativos"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -16,12 +20,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/arteficial-thumb.webp",
       "video": {
         "youtube": "https://youtu.be/4Gqq-ZTtE-4",
         "drive": ""
-      },
-      "categories": ["Narrativos"]
+      }
     },
     {
       "title": {
@@ -32,6 +34,10 @@
         "es": "Miniserie documental",
         "en": "Mini docu-series"
       },
+      "image": "/Miniaturas/videojuzgar-thumb.webp",
+      "categories": [
+        "Narrativos"
+      ],
       "laurel": {
         "enabled": true,
         "image": {
@@ -39,12 +45,10 @@
           "en": "/eng-laurel-videojuzgar.webp"
         }
       },
-      "image": "/Miniaturas/videojuzgar-thumb.webp",
       "video": {
         "youtube": "https://youtube.com/playlist?list=PLuuBZMiy3KpNzzliPVNosWE4Jcig5mgG4",
         "drive": ""
-      },
-      "categories": ["Narrativos"]
+      }
     },
     {
       "title": {
@@ -55,6 +59,10 @@
         "es": "Documental",
         "en": "Documentary"
       },
+      "image": "/Miniaturas/romper-cadenas-thumb.webp",
+      "categories": [
+        "Narrativos"
+      ],
       "laurel": {
         "enabled": true,
         "image": {
@@ -62,12 +70,10 @@
           "en": "/eng-laurel-romper-cadenas.webp"
         }
       },
-      "image": "/Miniaturas/romper-cadenas-thumb.webp",
       "video": {
         "youtube": "https://youtube.com/playlist?list=PLwZ251E6wz6372wXEHc7djyApc1PsJsAh",
         "drive": ""
-      },
-      "categories": ["Narrativos"]
+      }
     },
     {
       "title": {
@@ -78,6 +84,10 @@
         "es": "Video promocional",
         "en": "Promotional video"
       },
+      "image": "/Miniaturas/laboratorios-osa-thumb.webp",
+      "categories": [
+        "Comerciales"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -85,12 +95,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/laboratorios-osa-thumb.webp",
       "video": {
         "youtube": "https://youtu.be/k-x25em8U10",
         "drive": ""
-      },
-      "categories": ["Comerciales"]
+      }
     },
     {
       "title": {
@@ -101,6 +109,10 @@
         "es": "Video promocional",
         "en": "Promotional video"
       },
+      "image": "/Miniaturas/elias-figueroa-thumb.webp",
+      "categories": [
+        "Comerciales"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -108,12 +120,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/elias-figueroa-thumb.webp",
       "video": {
         "youtube": "https://youtu.be/zCVsUJHwdko",
         "drive": ""
-      },
-      "categories": ["Comerciales"]
+      }
     },
     {
       "title": {
@@ -124,6 +134,10 @@
         "es": "Videos promocionales",
         "en": "Promotional videos"
       },
+      "image": "/Miniaturas/bianco-thumb.webp",
+      "categories": [
+        "Comerciales"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -131,12 +145,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/bianco-thumb.webp",
       "video": {
         "youtube": "",
         "drive": "https://drive.google.com/drive/folders/1-0NTNGHsoLao4ORZtTE2H1iB33AoyqH2?usp=sharing"
-      },
-      "categories": ["Comerciales"]
+      }
     },
     {
       "title": {
@@ -147,6 +159,11 @@
         "es": "Video promocional",
         "en": "Promotional video"
       },
+      "image": "/Miniaturas/torneo-live-thumb.webp",
+      "categories": [
+        "Comerciales",
+        "Gaming"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -154,12 +171,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/torneo-live-thumb.webp",
       "video": {
         "youtube": "https://youtu.be/8b_HWXQXiLs",
         "drive": ""
-      },
-      "categories": ["Comerciales", "Gaming"]
+      }
     },
     {
       "title": {
@@ -170,6 +185,10 @@
         "es": "Transmisión en vivo",
         "en": "Livestream"
       },
+      "image": "/Miniaturas/promo-torneo-thumb.webp",
+      "categories": [
+        "Gaming"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -177,12 +196,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/promo-torneo-thumb.webp",
       "video": {
         "youtube": "https://youtu.be/5bq6FDt71ns",
         "drive": ""
-      },
-      "categories": ["Gaming"]
+      }
     },
     {
       "title": {
@@ -193,6 +210,10 @@
         "es": "Gameplay",
         "en": "Gameplay"
       },
+      "image": "/Miniaturas/hayden-thumb.webp",
+      "categories": [
+        "Gaming"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -200,12 +221,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/hayden-thumb.webp",
       "video": {
         "youtube": "https://youtu.be/feeCrn-qoUA",
         "drive": ""
-      },
-      "categories": ["Gaming"]
+      }
     },
     {
       "title": {
@@ -216,6 +235,10 @@
         "es": "Gameplays",
         "en": "Gameplays"
       },
+      "image": "/Miniaturas/domhayden-thumb.webp",
+      "categories": [
+        "Gaming"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -223,12 +246,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/domhayden-thumb.webp",
       "video": {
         "youtube": "https://youtube.com/playlist?list=PLWNf-aRw7gnk&si=3aoq3btfBDewiXXZ",
         "drive": ""
-      },
-      "categories": ["Gaming"]
+      }
     },
     {
       "title": {
@@ -239,6 +260,10 @@
         "es": "Gameplays",
         "en": "Gameplays"
       },
+      "image": "/Miniaturas/degendom-thumb.webp",
+      "categories": [
+        "Gaming"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -246,12 +271,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/degendom-thumb.webp",
       "video": {
         "youtube": "https://youtube.com/playlist?list=PLfYeDzuTKDDg&si=6TuhRVm1TvnQUn3X",
         "drive": ""
-      },
-      "categories": ["Gaming"]
+      }
     },
     {
       "title": {
@@ -262,6 +285,10 @@
         "es": "Gameplay",
         "en": "Gameplay"
       },
+      "image": "/Miniaturas/domplays-thumb.webp",
+      "categories": [
+        "Gaming"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -269,12 +296,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/domplays-thumb.webp",
       "video": {
         "youtube": "https://youtu.be/XgKumPUU1l8",
         "drive": ""
-      },
-      "categories": ["Gaming"]
+      }
     },
     {
       "title": {
@@ -285,6 +310,10 @@
         "es": "TikToks",
         "en": "TikToks"
       },
+      "image": "/Miniaturas/rsrb-thubm.webp",
+      "categories": [
+        "Verticales"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -292,12 +321,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/rsrb-thubm.webp",
       "video": {
         "youtube": "",
         "drive": "https://drive.google.com/drive/folders/12d6MAERXE8LIQvGn9LHZUkqM1v9mtSgf?usp=sharing"
-      },
-      "categories": ["Verticales"]
+      }
     },
     {
       "title": {
@@ -308,6 +335,11 @@
         "es": "Reels",
         "en": "Reels"
       },
+      "image": "/Miniaturas/paradisocafe-thumb.webp",
+      "categories": [
+        "Comerciales",
+        "Verticales"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -315,12 +347,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/paradisocafe-thumb.webp",
       "video": {
         "youtube": "",
         "drive": "https://drive.google.com/drive/folders/1OwA0nwwFcIG7fRbdqUeKC0C6IiyNQ0YX?usp=drive_link"
-      },
-      "categories": ["Comerciales", "Verticales"]
+      }
     },
     {
       "title": {
@@ -331,6 +361,11 @@
         "es": "Reels",
         "en": "Reels"
       },
+      "image": "/Miniaturas/r69-thumb.webp",
+      "categories": [
+        "Comerciales",
+        "Verticales"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -338,12 +373,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/r69-thumb.webp",
       "video": {
         "youtube": "",
         "drive": "https://drive.google.com/drive/folders/1LJWt7LPoJKmv8QP27vi8QJfOU9TU1_8C?usp=sharing"
-      },
-      "categories": ["Comerciales", "Verticales"]
+      }
     },
     {
       "title": {
@@ -354,6 +387,11 @@
         "es": "Reels",
         "en": "Reels"
       },
+      "image": "/Miniaturas/i-love-thumb.webp",
+      "categories": [
+        "Comerciales",
+        "Verticales"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -361,12 +399,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/i-love-thumb.webp",
       "video": {
         "youtube": "https://www.youtube.com/playlist?list=PLwZ251E6wz60UjnTsgx8Wk-Hkn8DGW7ZK",
         "drive": ""
-      },
-      "categories": ["Comerciales", "Verticales"]
+      }
     },
     {
       "title": {
@@ -377,6 +413,10 @@
         "es": "Tutorial",
         "en": "Tutorial"
       },
+      "image": "/Miniaturas/sippu-thumb.webp",
+      "categories": [
+        "Comerciales"
+      ],
       "laurel": {
         "enabled": false,
         "image": {
@@ -384,12 +424,10 @@
           "en": ""
         }
       },
-      "image": "/Miniaturas/sippu-thumb.webp",
       "video": {
         "youtube": "https://youtu.be/sxSl9ZD-UHs",
         "drive": ""
-      },
-      "categories": ["Comerciales"]
+      }
     }
   ]
 }
