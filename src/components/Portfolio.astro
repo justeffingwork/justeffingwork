@@ -232,6 +232,10 @@ const projects = projectsData.projects;
         overflow-y: hidden;
         scroll-behavior: smooth;
         scrollbar-width: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: pan-y;
+        cursor: grab;
     }
 
     .portfolioCarousel::-webkit-scrollbar {
@@ -587,59 +591,120 @@ const projects = projectsData.projects;
         });
     }
 
-    // drag carousel with mouse
-    if (carousel) {
-        let isDragging = false;
-        let startX = 0;
-        let startScrollLeft = 0;
-        let hasDragged = false;
+    
+// drag carousel with mouse
+if (carousel) {
+    let isDragging = false;
+    let hasDragged = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let lastX = 0;
+    let lastTime = 0;
+    let velocity = 0;
+    let animationFrame = 0;
+    let suppressClick = false;
 
-        carousel.addEventListener('mousedown', (event) => {
-            if (event.button !== 0) return;
+    const stopInertia = () => {
+        cancelAnimationFrame(animationFrame);
+    };
 
-            isDragging = true;
-            hasDragged = false;
-            startX = event.clientX;
-            startScrollLeft = carousel.scrollLeft;
+    carousel.addEventListener('pointerdown', (event) => {
+        if (event.button !== 0 || !event.isPrimary) return;
 
-            carousel.style.scrollBehavior = 'auto';
-            carousel.style.cursor = 'grabbing';
-        });
+        stopInertia();
 
-        window.addEventListener('mousemove', (event) => {
-            if (!isDragging) return;
+        isDragging = true;
+        hasDragged = false;
 
-            const distance = event.clientX - startX;
+        startX = event.clientX;
+        lastX = event.clientX;
+        startScrollLeft = carousel.scrollLeft;
+        lastTime = performance.now();
+        velocity = 0;
 
-            if (Math.abs(distance) > 5) {
-                hasDragged = true;
+        carousel.setPointerCapture(event.pointerId);
+        carousel.style.scrollBehavior = 'auto';
+    });
+
+    carousel.addEventListener('pointermove', (event) => {
+        if (!isDragging) return;
+
+        const distance = event.clientX - startX;
+
+        if (Math.abs(distance) > 5) {
+            hasDragged = true;
+        }
+
+        if (!hasDragged) return;
+
+        event.preventDefault();
+
+        const now = performance.now();
+        const deltaTime = Math.max(1, now - lastTime);
+        const deltaX = event.clientX - lastX;
+
+        velocity = -deltaX / deltaTime;
+
+        carousel.scrollLeft = startScrollLeft - distance;
+
+        lastX = event.clientX;
+        lastTime = now;
+
+        carousel.style.cursor = 'grabbing';
+    });
+
+    const finishDrag = () => {
+        if (!isDragging) return;
+
+        isDragging = false;
+        carousel.style.cursor = 'grab';
+
+        if (!hasDragged) return;
+
+        suppressClick = true;
+
+        // Inertia
+        let previousTime = performance.now();
+
+        const animate = (now: number) => {
+            const deltaTime = Math.min(now - previousTime, 32);
+            previousTime = now;
+
+            velocity *= Math.exp(-0.004 * deltaTime);
+
+            carousel.scrollLeft += velocity * deltaTime;
+
+            if (
+                Math.abs(velocity) > 0.02 &&
+                carousel.scrollLeft > 0 &&
+                carousel.scrollLeft < carousel.scrollWidth - carousel.clientWidth
+            ) {
+                animationFrame = requestAnimationFrame(animate);
             }
+        };
 
-            if (hasDragged) {
-                carousel.scrollLeft = startScrollLeft - distance;
-            }
-        });
+            animationFrame = requestAnimationFrame(animate);
 
-        window.addEventListener('mouseup', () => {
-            if (!isDragging) return;
-
-            isDragging = false;
             carousel.style.scrollBehavior = 'smooth';
-            carousel.style.cursor = '';
-        });
+        };
 
-        // prevent opening links after dragging
+        carousel.addEventListener('pointerup', finishDrag);
+        carousel.addEventListener('pointercancel', finishDrag);
+
         carousel.addEventListener('click', (event) => {
-            if (hasDragged) {
+            if (suppressClick) {
                 event.preventDefault();
                 event.stopPropagation();
+                suppressClick = false;
             }
         }, true);
 
-        // avoid dragging project images as files
+        // Prevent dragging images as files
         carousel.querySelectorAll('img').forEach((img) => {
             img.draggable = false;
         });
+
+        carousel.style.cursor = 'grab';
     }
 
 </script>
